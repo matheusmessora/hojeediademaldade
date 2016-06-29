@@ -23,3 +23,5 @@ admin/node_modules/
 admin/bower_components/
 admin/dev/
 .idea/
+
+node_modules/
