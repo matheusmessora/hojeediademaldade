@@ -19,6 +19,6 @@
   "dependencies": {
     "express": "^4.14.0",
     "mustache": "^2.2.1",
-    "mustache-express": "1.2.2"
+    "mustache-express": "^1.2.2"
   }
 }
