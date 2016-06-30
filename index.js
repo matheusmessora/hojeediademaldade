@@ -60,10 +60,16 @@ function getRandomInt(min, max) {
 
 
 app.get('/', function (req, res) {
-
   var random = getRandomInt(0,data.length);
   res.render('index', {
     data: data[random],
+    online: getRandomInt(1, 230)
+  });
+});
+
+app.get('/:evilId', function (req, res) {
+  res.render('index', {
+    data: data[req.params.evilId],
     online: getRandomInt(1, 230)
   });
 });
