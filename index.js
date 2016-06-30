@@ -9,6 +9,7 @@ app.set('views', path.resolve(__dirname, './views'));
 app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', __dirname + '/views');
+app.set('port', (process.env.PORT || 3001));
 
 
 var data = [
@@ -67,6 +68,6 @@ app.get('/', function (req, res) {
   });
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(app.get('port'), function () {
+  console.log('Example app listening on port ' + app.get('port'));
 });
