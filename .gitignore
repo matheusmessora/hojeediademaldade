@@ -23,5 +23,5 @@ admin/node_modules/
 admin/bower_components/
 admin/dev/
 .idea/
-
+*.zip
 node_modules/
