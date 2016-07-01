@@ -3,6 +3,7 @@ var app = express();
 var path = require('path');
 var mustacheExpress = require('mustache-express');
 
+
 app.set('views', path.resolve(__dirname, './views'));
 
 // Register '.mustache' extension with The Mustache Express
@@ -12,65 +13,39 @@ app.set('views', __dirname + '/views');
 app.set('port', (process.env.PORT || 3001));
 
 
-var data = [
-  {
-    trackId: "INSTALL-BAIDU",
-    title: "instalar o BAIDU!",
-    img: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-141499087849/static/baidu.jpg",
-    css: {
-      background: "303030",
-      accent: "d32f2f",
-      accent_dark: "FDD835"
-    }
-  },
-  {
-    trackId: "UBER-TAXI",
-    title: "chamar taxi e Uber ao mesmo tempo!",
-    img: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-141499087849/static/uber.jpg",
-    css: {
-      background: "303030",
-      accent: "F9A825",
-      accent_dark: "F57F17"
-    }
-  },
-  {
-    trackId: "WHILE-TRUE",
-    title: "fazer WHILE true no código",
-    img: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-141499087849/static/whiletrue.jpg",
-    css: {
-      background: "303030",
-      accent: "00E676"
-    }
-  },
-  {
-    trackId: "ABRIR-IE",
-    title: "abrir o IE",
-    img: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-141499087849/static/ie8.jpg",
-    css: {
-      background: "303030",
-      accent: "0288D1"
-    }
-  }
-];
+// Initialize modules
+var random = require('./src/randomService')();
+var evilService = require('./src/evilService')({
+  random: random
+});
 
-// Returns a random number between min (inclusive) and max (exclusive)
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
 
 
 app.get('/', function (req, res) {
-  var random = getRandomInt(0,data.length);
+  var evil = evilService.newEvil();
+  var newEvil = evilService.newEvil();
   res.render('index', {
-    data: data[random],
-    online: getRandomInt(1, 230)
+    data: evil,
+    online: 1,
+    newEvil: newEvil
   });
 });
 
-app.get('/:evilId', function (req, res) {
+app.post('/:friendly_url', function (req, res) {
+  evilService.doEvil(req.params.friendly_url);
+
+  res.status(200);
+  res.send('OKAY OKAY!');
+});
+
+app.get('/:friendly_url', function (req, res) {
+  var evil = evilService.findByFriendlyURL(req.params.friendly_url);
+  var newEvil = evilService.newEvil();
+
   res.render('index', {
-    data: data[req.params.evilId],
-    online: getRandomInt(1, 230)
+    data: evil,
+    online: 1,
+    newEvil: newEvil
   });
 });
 

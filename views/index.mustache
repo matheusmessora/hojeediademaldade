@@ -68,15 +68,31 @@
             margin-top: 5%;
         }
         h1 {
-            font-weight: 800;
-            color: #FFFFFF;
+            font-family: 'Gloria Hallelujah', cursive;
+            font-weight: 100;
             font-size: 80px;
+            text-transform: uppercase;
+
+
         }
         h3 {
             font-weight: 100;
-            font-size: 66px;
-
-            text-transform: uppercase;
+            font-size: 50px;
+            display: inline;
+            /*text-transform: uppercase;*/
+        }
+        h4 {
+            margin-top: 60px;
+        }
+        .maldade {
+            font-weight: 800;
+            color: #FFF;
+        }
+        h3 .maldade {
+            font-size: 50px;
+        }
+        h4 .maldade {
+            font-size: 18px;
         }
         .highlight {
             font-weight: 600;
@@ -88,8 +104,8 @@
 
 
         .fa {
-            font-size: 32px;
-            color: #757575;
+            font-size: 20px;
+            color: #FFF;
         }
         .fa:hover {
             color: #FFFFFF;
@@ -97,9 +113,6 @@
         .main {
             text-align: center;
             margin-bottom: 50px;
-        }
-        .main h3 {
-            font-family: 'Gloria Hallelujah', cursive;
         }
         .actions {
             text-align: center;
@@ -153,32 +166,52 @@
 
 <body>
 
+
 <div class="container">
 
     <div class="row main">
         <div class="col-md-12">
-            <h3>Hoje é dia de <span class="highlight">maldade!</span></h3>
+            <h1>Hoje é dia de <span class="highlight">maldade!</span></h1>
             <!--<h4>{{online}} maldoso online</h4>-->
         </div>
     </div>
     <div class="row evil-holder">
         <div class="col-md-8">
-            <h3>Hoje é dia de</h3>
-            <h1 class="maldade">{{ data.title }}</h1>
+            <h3>Hoje é dia de&nbsp;<span class="maldade">{{ data.title }}</span></h3>
+            <h4><span class="maldade">{{ data.count }}</span> maldosos já fizeram essa maldade!</h4>
         </div>
         <div class="col-md-4 hidden-sm hidden-xs">
             <img id="maldade-img" src="{{ data.img }}" alt="Smiley face" width="100%" height="100%">
         </div>
+
+        <!--<div class="col-md-12">-->
+            <!--<h4><span class="maldade">127</span> maldosos já fizeram essa maldade!</h4>-->
+        <!--</div>-->
     </div>
 
-    <div class="row actions">
-        <div class="col-md-6 col-md-offset-3 hidden-sm hidden-xs">
-                <button type="button" class="btn btn-primary btn-lg" onclick="nextEvil()"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Já fiz essa maldade</button>
-                <button type="button" class="btn btn-primary btn-lg" onclick="nextEvil()"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Próxima maldade</button>
+    <div class="row actions hidden-sm hidden-xs">
+        <div class="col-md-4">
+            <button type="button" class="btn btn-primary btn-lg" onclick="doEvil('{{ data.friendly_url}}');" ><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Já fiz essa maldade</button>
         </div>
-        <div class="col-sm-12 visible-sm visible-xs">
-            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="nextEvil()"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Já fiz essa maldade</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="nextEvil()"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Próxima maldade</button>
+        <div class="col-md-4">
+            <!--<div class="fb-share-button" data-href="http://www.hojeediademaldade.com.br/" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.hojeediademaldade.com.br%2F&amp;src=sdkpreparse">Compartilhar</a></div>-->
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.hojeediademaldade.com.br%2F{{ data.friendly_url }}" target="_blank">
+                <button type="button" class="btn btn-primary btn-lg" ><i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    Compartilhar</button>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="/{{newEvil.friendly_url}}">
+                <button type="button" class="btn btn-primary btn-lg" ><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Próxima maldade</button>
+            </a>
+        </div>
+    </div>
+    <div class="row actions visible-sm visible-xs">
+        <div class="col-sm-12">
+            <button type="button" class="btn btn-primary btn-lg btn-block" ><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Já fiz essa maldade</button>
+            <a href="/{{newEvil.friendly_url}}">
+                <button type="button" class="btn btn-primary btn-lg btn-block" ><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Próxima maldade</button>
+            </a>
         </div>
     </div>
 
@@ -205,18 +238,13 @@
     ga('set', 'dimension1', "{{ data.trackId }}");
     ga('send', 'pageview');
 
+    function doEvil(friendlyUrl){
+        console.log("POST " + friendlyUrl);
 
-    window.onload = function() {
-
-    };
-
-    var nextEvil = function(){
-        location.reload();;
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "/" + friendlyUrl, true);
+        xhttp.send();
     }
-
-
-
-
 
 
 </script>
