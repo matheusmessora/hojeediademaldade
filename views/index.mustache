@@ -143,6 +143,7 @@
         @media (max-width: 768px) {
             .evil-holder {
                 border-top: 1px solid #{{data.css.accent}};
+                padding-top: 15px;
             }
             .main {
                 margin-bottom: 15px;
@@ -155,8 +156,17 @@
                 font-size: 46px;
                 margin: 0;
             }
+            h4 {
+                margin-top: 22px;
+            }
+            .actions {
+                margin-top: 20px;
+            }
             #maldade-img {
                 margin-top: 10px;
+            }
+            .btn {
+                margin-top: 7px;
             }
         }
 
@@ -208,7 +218,11 @@
     </div>
     <div class="row actions visible-sm visible-xs">
         <div class="col-sm-12">
-            <button type="button" class="btn btn-primary btn-lg btn-block" ><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Já fiz essa maldade</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="doEvil('{{ data.friendly_url}}');" ><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Já fiz essa maldade</button>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.hojeediademaldade.com.br%2F{{ data.friendly_url }}" target="_blank">
+                <button type="button" class="btn btn-primary btn-lg btn-block" ><i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    Compartilhar</button>
+            </a>
             <a href="/{{newEvil.friendly_url}}">
                 <button type="button" class="btn btn-primary btn-lg btn-block" ><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Próxima maldade</button>
             </a>
