@@ -164,6 +164,12 @@
             margin-top: 15px;
             font-size: 16px;
         }
+        .card-share {
+            background: #00C853;
+        }
+        .card-share .fa{
+            font-size: 80px;
+        }
 
         .z-depth-1 {
             box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
@@ -188,7 +194,14 @@
 
         @media (max-width: 768px) {
             a {
+                font-size: 22px;
                 padding: 8px;
+            }
+            a .fa {
+                font-size: 26px;
+            }
+            a .glyphicon {
+                font-size: 22px;   
             }
             .evil-holder {
                 border-top: 1px solid #F44336;
@@ -241,7 +254,7 @@
 
     <div class="row">
 
-        <div class="col-md-4 ">
+        <div class="col-md-4 col-xs-6 col-sm-6">
             <div class="card z-depth-1 card-stats">
                 <div class="card-content">
                     <h4>42</h4>
@@ -249,19 +262,20 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 ">
-            <div class="card z-depth-1 card-stats">
-                <div class="card-content">
-                    <h4>527</h4>
-                    <h5>realizadas</h5>
-                </div>
-            </div>
-        </div>
-         <div class="col-md-4 ">
+         <div class="col-md-4 col-xs-6 col-sm-6">
             <div class="card z-depth-1 card-stats">
                 <div class="card-content">
                     <h4>132</h4>
                     <h5>compartilhadas</h5>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-12 col-sm-12">
+            <div class="card z-depth-1 card-stats">
+                <div class="card-content">
+                    <h4>527</h4>
+                    <h5>maldades feitas</h5>
                 </div>
             </div>
         </div>
