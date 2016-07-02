@@ -147,7 +147,7 @@ module.exports = function EvilService(dependencies) {
         },
         {
             count: 0,
-            friendly_url: "pisar na grama",
+            friendly_url: "pisar-na-grama",
             title: "pisar na grama",
             img: "http://redeemancipa.org.br/wp-content/uploads/2012/12/n%C3%A3o-pise.jpg",
             css: {
