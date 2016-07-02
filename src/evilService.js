@@ -17,7 +17,7 @@ module.exports = function EvilService(dependencies) {
             }
         },
         {
-            count: 0,
+            count: 42,
             friendly_url: "chamar-taxi-e-uber-ao-mesmo-tempo",
             title: "chamar taxi e Uber ao mesmo tempo!",
             img: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-141499087849/static/uber.jpg",
@@ -28,7 +28,7 @@ module.exports = function EvilService(dependencies) {
             }
         },
         {
-            count: 100,
+            count: 87,
             friendly_url: "fazer-while-true-no-codigo",
             title: "fazer WHILE true no código",
             img: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-141499087849/static/whiletrue.jpg",
@@ -39,7 +39,7 @@ module.exports = function EvilService(dependencies) {
             }
         },
         {
-            count: 0,
+            count: 9,
             friendly_url: "abrir-o-ie",
             title: "abrir o IE",
             img: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-141499087849/static/ie8.jpg",
@@ -50,7 +50,7 @@ module.exports = function EvilService(dependencies) {
             }
         },
         {
-            count: 0,
+            count: 52,
             friendly_url: "escutar-funk-proibidao-no-spotify-no-ultimo-volume",
             title: "escutar funk proibidão no spotify no ultimo volume",
             img: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-141499087849/static/bondetigrao.jpg",
@@ -61,7 +61,7 @@ module.exports = function EvilService(dependencies) {
             }
         },
         {
-            count: 0,
+            count: 17,
             friendly_url: "passar-correndo-na-frente-dos-camelos-e-gritar-o-rapa",
             title: "passar correndo na frente dos camelos e gritar OOOh Rapaaaa!",
             img: "http://oglobo.globo.com/fotos/2011/09/15/15_MHG_RIO_camelo.jpg",
@@ -83,7 +83,7 @@ module.exports = function EvilService(dependencies) {
             }
         },
         {
-            count: 0,
+            count: 12,
             friendly_url: "engordar-para-valer",
             title: "engordar para valer",
             img: "https://i.ytimg.com/vi/H52kepS9tO4/hqdefault.jpg",
@@ -94,7 +94,7 @@ module.exports = function EvilService(dependencies) {
             }
         },
         {
-            count: 0,
+            count: 2,
             friendly_url: "peidar-na-fila-do-banco-e-sair-correndo",
             title: "peidar na fila do banco e sair correndo",
             img: "http://www.polemicaparaiba.com.br/wp-content/uploads/2015/09/fila-de-banco.jpg",
@@ -105,7 +105,7 @@ module.exports = function EvilService(dependencies) {
             }
         },
         {
-            count: 0,
+            count: 3,
             friendly_url: "ir-no-mcdonalds-e-pedir-uma-salada",
             title: "ir no McDonalds e pedir uma salada",
             img: "https://venancios.files.wordpress.com/2013/04/gordo.jpg",
@@ -116,7 +116,7 @@ module.exports = function EvilService(dependencies) {
             }
         },
         {
-            count: 0,
+            count: 1,
             friendly_url: "fazer-um-site-de-maldade",
             title: "fazer um site de maldade",
             img: "https://i.ytimg.com/vi/oR13iPNv9wI/hqdefault.jpg",
@@ -140,6 +140,16 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "pegar-homem-pegar-mulher",
             title: "pegar homem, pegar mulher! BORAA",
             img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
+        },
+        {
+            count: 0,
+            friendly_url: "pisar na grama",
+            title: "pisar na grama",
+            img: "http://redeemancipa.org.br/wp-content/uploads/2012/12/n%C3%A3o-pise.jpg",
             css: {
                 background: "303030",
                 accent: "0288D1"
