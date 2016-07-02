@@ -138,7 +138,17 @@ module.exports = function EvilService(dependencies) {
         {
             count: 0,
             friendly_url: "pegar-homem-pegar-mulher",
-            title: "hoje é dia de pegar homem, pegar mulher! BORA",
+            title: "pegar homem, pegar mulher! BORAA",
+            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
+        },
+        {
+            count: 0,
+            friendly_url: "pegar-homem-pegar-mulher",
+            title: "pegar homem, pegar mulher! BORAA",
             img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
             css: {
                 background: "303030",
