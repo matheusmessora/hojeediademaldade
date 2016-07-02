@@ -155,6 +155,150 @@ module.exports = function EvilService(dependencies) {
                 accent: "0288D1"
             }
         }
+
+        {
+            count: 0,
+            friendly_url: "caps-log-ligado",
+            title: "Dia de logar no notebook com o capslog ligado",
+            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
+        },
+
+        {
+            count: 0,
+            friendly_url: "visualizar-e-nao-responder",
+            title: "Dia de visualizar e nao responder",
+            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
+        },
+
+        {
+            count: 0,
+            friendly_url: "link-proprio-video",
+            title: "Dia de dar like no próprio video",
+            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
+        },
+
+        {
+            count: 0,
+            friendly_url: "curtir-proprio-comentario",
+            title: "Dia de curtir o proprio comentário",
+            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
+        },
+
+        {
+            count: 0,
+            friendly_url: "nao-respoder-amem",
+            title: "Dia de nao responder amém no grupo da famila",
+            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
+        },
+
+        {
+            count: 0,
+            friendly_url: "video-gemido",
+            title: "Dia de mandar video de gemido para avó na fila do banco",
+            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
+        },
+
+        {
+            count: 0,
+            friendly_url: "whatsapap-pago",
+            title: "Dia de espalhar que o whatsapp será pago",
+            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
+        },
+
+        {
+            count: 0,
+            friendly_url: "tinder-baranga",
+            title: "Dia de dar superlike de baranga no Tinter",
+            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
+        },
+
+        {
+            count: 0,
+            friendly_url: "indireta-wifi",
+            title: "Dia de mandar indireta para o vizinho com o nome da rede wifi",
+            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
+        },
+
+        {
+            count: 0,
+            friendly_url: "vida-candcrush",
+            title: "Dia de pedir vida no candcrush",
+            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
+        },
+
+        {
+            count: 0,
+            friendly_url: "fonte-notepad",
+            title: "Dia de alterar o fonte no notepad",
+            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
+        },
+
+        {
+            count: 0,
+            friendly_url: "debugar-producao",
+            title: "Dia de debugar na produção",
+            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
+        },
+
+        {
+            count: 0,
+            friendly_url: "so-nao-homologado",
+            title: "Dia de fechar o chamado no ultimo dia do SLA e falar que  o SO não é homologado",
+            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
+        },
+
     ];
 
     var newEvil = function() {
