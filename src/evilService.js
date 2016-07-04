@@ -158,9 +158,9 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
-            friendly_url: "caps-log-ligado",
-            title: "Dia de logar no notebook com o capslog ligado",
-            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            friendly_url: "capslock-ligado",
+            title: "Dia de logar no notebook com o capslock ligado",
+            img: "https://secure.logitech.com/assets/32508/35/k800-top.jpg",
             css: {
                 background: "303030",
                 accent: "0288D1"
@@ -171,7 +171,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "visualizar-e-nao-responder",
             title: "Dia de visualizar e nao responder",
-            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            img: "http://lounge.obviousmag.org/monica_montone/assets_c/2015/10/visualizar%20e%20n%C3%A3o%20responder%20(1)-thumb-800x600-125118.png",
             css: {
                 background: "303030",
                 accent: "0288D1"
@@ -182,7 +182,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "link-proprio-video",
             title: "Dia de dar like no próprio video",
-            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            img: "http://www.uhull.com.br/wp-content/uploads/2008/10/017_pics-399x263.jpg",
             css: {
                 background: "303030",
                 accent: "0288D1"
@@ -193,7 +193,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "curtir-proprio-comentario",
             title: "Dia de curtir o proprio comentário",
-            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            img: "http://www.uhull.com.br/wp-content/uploads/2008/10/017_pics-399x263.jpg",
             css: {
                 background: "303030",
                 accent: "0288D1"
@@ -270,7 +270,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "fonte-notepad",
             title: "Dia de alterar o fonte no notepad",
-            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            img: "http://www.tutorials4u.com/html/graphics/notepad/notepad-new-page.jpg",
             css: {
                 background: "303030",
                 accent: "0288D1"
@@ -281,7 +281,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "debugar-producao",
             title: "Dia de debugar em produção",
-            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            img: "http://i.istockimg.com/file_thumbview_approve/68886757/6/stock-photo-68886757-it-background-binary-code-a08.jpg",
             css: {
                 background: "303030",
                 accent: "0288D1"
@@ -292,7 +292,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "so-nao-homologado",
             title: "Dia de fechar o chamado no ultimo dia do SLA e falar que o SO não é homologado",
-            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            img: "http://i.istockimg.com/file_thumbview_approve/68886757/6/stock-photo-68886757-it-background-binary-code-a08.jpg",
             css: {
                 background: "303030",
                 accent: "0288D1"
