@@ -154,7 +154,7 @@ module.exports = function EvilService(dependencies) {
                 background: "303030",
                 accent: "0288D1"
             }
-        }
+        },
 
         {
             count: 0,
@@ -204,7 +204,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "nao-respoder-amem",
             title: "Dia de nao responder amém no grupo da famila",
-            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            img: "https://www.whatsapp.com/img/v2/logo-promo.jpg",
             css: {
                 background: "303030",
                 accent: "0288D1"
@@ -213,8 +213,8 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
-            friendly_url: "video-gemido",
-            title: "Dia de mandar video de gemido para avó na fila do banco",
+            friendly_url: "video-gemido-para-avo",
+            title: "http://www.tribunahoje.com/vgmidia/imagens/21533_ext_arquivo.jpg",
             img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
             css: {
                 background: "303030",
@@ -226,7 +226,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "whatsapap-pago",
             title: "Dia de espalhar que o whatsapp será pago",
-            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            img: "http://franquiaautomatica.com/blog/wp-content/uploads/2014/07/whatsapp-pago-whatsapp-gratis-whatsapp-vai-ser-pago.jpg",
             css: {
                 background: "303030",
                 accent: "0288D1"
@@ -236,8 +236,8 @@ module.exports = function EvilService(dependencies) {
         {
             count: 0,
             friendly_url: "tinder-baranga",
-            title: "Dia de dar superlike de baranga no Tinter",
-            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            title: "Dia de dar like de baranga no Tinter",
+            img: "http://www.eonline.com/eol_images/Entire_Site/2014817/rs_560x415-140917143530-1024.Tinder-Logo.ms.091714_copy.jpg",
             css: {
                 background: "303030",
                 accent: "0288D1"
@@ -248,7 +248,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "indireta-wifi",
             title: "Dia de mandar indireta para o vizinho com o nome da rede wifi",
-            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            img: "http://img.ibxk.com.br/ns/rexposta/2015/05/14/14213459278002.jpg",
             css: {
                 background: "303030",
                 accent: "0288D1"
@@ -257,9 +257,9 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
-            friendly_url: "vida-candcrush",
-            title: "Dia de pedir vida no candcrush",
-            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            friendly_url: "vida-candycrush",
+            title: "Dia de pedir vida no Candy Crush",
+            img: "http://i2.wp.com/candycrushsodasagatips.com/wp-content/uploads/2014/10/candy-crush-soda-level-13-new-screenshot.png",
             css: {
                 background: "303030",
                 accent: "0288D1"
@@ -280,7 +280,7 @@ module.exports = function EvilService(dependencies) {
         {
             count: 0,
             friendly_url: "debugar-producao",
-            title: "Dia de debugar na produção",
+            title: "Dia de debugar em produção",
             img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
             css: {
                 background: "303030",
@@ -291,13 +291,13 @@ module.exports = function EvilService(dependencies) {
         {
             count: 0,
             friendly_url: "so-nao-homologado",
-            title: "Dia de fechar o chamado no ultimo dia do SLA e falar que  o SO não é homologado",
+            title: "Dia de fechar o chamado no ultimo dia do SLA e falar que o SO não é homologado",
             img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
             css: {
                 background: "303030",
                 accent: "0288D1"
             }
-        },
+        }
 
     ];
 
