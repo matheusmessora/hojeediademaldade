@@ -158,8 +158,8 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
-            friendly_url: "capslock-ligado",
-            title: "Dia de logar no notebook com o capslock ligado",
+            friendly_url: "logar-no-notebook-com-capslock-ligado",
+            title: "logar no notebook com o capslock ligado",
             img: "https://secure.logitech.com/assets/32508/35/k800-top.jpg",
             css: {
                 background: "303030",
@@ -170,7 +170,7 @@ module.exports = function EvilService(dependencies) {
         {
             count: 0,
             friendly_url: "visualizar-e-nao-responder",
-            title: "Dia de visualizar e nao responder",
+            title: "visualizar e não responder",
             img: "http://lounge.obviousmag.org/monica_montone/assets_c/2015/10/visualizar%20e%20n%C3%A3o%20responder%20(1)-thumb-800x600-125118.png",
             css: {
                 background: "303030",
@@ -180,8 +180,8 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
-            friendly_url: "link-proprio-video",
-            title: "Dia de dar like no próprio video",
+            friendly_url: "like-proprio-video",
+            title: "dar like no próprio video",
             img: "http://www.uhull.com.br/wp-content/uploads/2008/10/017_pics-399x263.jpg",
             css: {
                 background: "303030",
@@ -192,7 +192,7 @@ module.exports = function EvilService(dependencies) {
         {
             count: 0,
             friendly_url: "curtir-proprio-comentario",
-            title: "Dia de curtir o proprio comentário",
+            title: "curtir o proprio comentário",
             img: "http://www.uhull.com.br/wp-content/uploads/2008/10/017_pics-399x263.jpg",
             css: {
                 background: "303030",
@@ -202,8 +202,8 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
-            friendly_url: "nao-respoder-amem",
-            title: "Dia de nao responder amém no grupo da famila",
+            friendly_url: "nao-respoder-amem-no-grupo-da-familia",
+            title: "não responder amém no grupo da famila",
             img: "https://www.whatsapp.com/img/v2/logo-promo.jpg",
             css: {
                 background: "303030",
@@ -213,9 +213,9 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
-            friendly_url: "video-gemido-para-avo",
-            title: "http://www.tribunahoje.com/vgmidia/imagens/21533_ext_arquivo.jpg",
-            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
+            friendly_url: "mandar-video-de-gemido-para-avo",
+            title: "mandar video de gemido para a Avó",
+            img: "http://www.tribunahoje.com/vgmidia/imagens/21533_ext_arquivo.jpg",
             css: {
                 background: "303030",
                 accent: "0288D1"
@@ -224,8 +224,8 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
-            friendly_url: "whatsapap-pago",
-            title: "Dia de espalhar que o whatsapp será pago",
+            friendly_url: "espalhar-que-o-whatsapp-sera-pago",
+            title: "espalhar que o whatsapp será pago",
             img: "http://franquiaautomatica.com/blog/wp-content/uploads/2014/07/whatsapp-pago-whatsapp-gratis-whatsapp-vai-ser-pago.jpg",
             css: {
                 background: "303030",
@@ -235,8 +235,8 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
-            friendly_url: "tinder-baranga",
-            title: "Dia de dar like de baranga no Tinter",
+            friendly_url: "dar-like-em-baranga-no-tinder",
+            title: "dar like em baranga no Tinter",
             img: "http://www.eonline.com/eol_images/Entire_Site/2014817/rs_560x415-140917143530-1024.Tinder-Logo.ms.091714_copy.jpg",
             css: {
                 background: "303030",
@@ -246,8 +246,8 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
-            friendly_url: "indireta-wifi",
-            title: "Dia de mandar indireta para o vizinho com o nome da rede wifi",
+            friendly_url: "mandar-indireta-para-o-vizinho-com-o-nome-da-rede-wifi",
+            title: "mandar indireta para o vizinho com o nome da rede wifi",
             img: "http://img.ibxk.com.br/ns/rexposta/2015/05/14/14213459278002.jpg",
             css: {
                 background: "303030",
@@ -257,8 +257,8 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
-            friendly_url: "vida-candycrush",
-            title: "Dia de pedir vida no Candy Crush",
+            friendly_url: "pedir-vida-no-candycrush",
+            title: "pedir vida no Candy Crush",
             img: "http://i2.wp.com/candycrushsodasagatips.com/wp-content/uploads/2014/10/candy-crush-soda-level-13-new-screenshot.png",
             css: {
                 background: "303030",
@@ -268,8 +268,8 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
-            friendly_url: "fonte-notepad",
-            title: "Dia de alterar o fonte no notepad",
+            friendly_url: "alterar-fonte-notepad",
+            title: "alterar o fonte no notepad",
             img: "http://www.tutorials4u.com/html/graphics/notepad/notepad-new-page.jpg",
             css: {
                 background: "303030",
@@ -279,8 +279,8 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
-            friendly_url: "debugar-producao",
-            title: "Dia de debugar em produção",
+            friendly_url: "debug-em-producao",
+            title: "fazer debug em produção",
             img: "http://i.istockimg.com/file_thumbview_approve/68886757/6/stock-photo-68886757-it-background-binary-code-a08.jpg",
             css: {
                 background: "303030",
@@ -290,8 +290,8 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
-            friendly_url: "so-nao-homologado",
-            title: "Dia de fechar o chamado no ultimo dia do SLA e falar que o SO não é homologado",
+            friendly_url: "fechar-chamado-no-ultimo-dia-do-sla",
+            title: "fechar o chamado no ultimo dia do SLA",
             img: "http://i.istockimg.com/file_thumbview_approve/68886757/6/stock-photo-68886757-it-background-binary-code-a08.jpg",
             css: {
                 background: "303030",
