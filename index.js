@@ -1,3 +1,4 @@
+"use strict";
 var express = require('express');
 var app = express();
 var path = require('path');
@@ -22,12 +23,16 @@ var evilService = require('./src/evilService')({
 
 
 app.get('/', function (req, res) {
-  var evil = evilService.newEvil();
-  var newEvil = evilService.newEvil();
+  let evil = evilService.newEvil();
+  let newEvil = evilService.newEvil();
+  let totalEvil = evilService.totalEvils();
+  let evilsDone = evilService.evilsDone();
   res.render('index', {
     data: evil,
     online: 1,
-    newEvil: newEvil
+    newEvil: newEvil,
+    totalEvil: totalEvil,
+    evilsDone: evilsDone
   });
 });
 
@@ -35,17 +40,19 @@ app.post('/:friendly_url', function (req, res) {
   evilService.doEvil(req.params.friendly_url);
 
   res.status(200);
-  res.send('OKAY OKAY!');
 });
 
 app.get('/:friendly_url', function (req, res) {
   var evil = evilService.findByFriendlyURL(req.params.friendly_url);
   var newEvil = evilService.newEvil();
-
+  let totalEvil = evilService.totalEvils();
+  let evilsDone = evilService.evilsDone();
   res.render('index', {
     data: evil,
     online: 1,
-    newEvil: newEvil
+    newEvil: newEvil,
+    totalEvil: totalEvil,
+    evilsDone: evilsDone
   });
 });
 

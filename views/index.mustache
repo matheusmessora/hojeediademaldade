@@ -192,6 +192,16 @@
         }
 
 
+        /** EFFECTS **/
+        #sumOfAllEvil, #evilsDone {
+            -webkit-transition: opacity .5s ease-in-out;
+            -moz-transition: opacity .5s ease-in-out;
+            -ms-transition: opacity .5s ease-in-out;
+            -o-transition: opacity .5s ease-in-out;
+            transition: opacity .5s ease-in-out;
+        }
+
+
         @media (max-width: 768px) {
             a {
                 font-size: 22px;
@@ -257,7 +267,7 @@
         <div class="col-md-4 col-xs-6 col-sm-6">
             <div class="card z-depth-1 card-stats">
                 <div class="card-content">
-                    <h4>42</h4>
+                    <h4>{{ totalEvil }}</h4>
                     <h5>maldades</h5>
                 </div>
             </div>
@@ -274,7 +284,7 @@
         <div class="col-md-4 col-xs-12 col-sm-12">
             <div class="card z-depth-1 card-stats">
                 <div class="card-content">
-                    <h4>527</h4>
+                    <h4 id="evilsDone">{{ evilsDone}}</h4>
                     <h5>maldades feitas</h5>
                 </div>
             </div>
@@ -285,7 +295,7 @@
         <div class="col-md-12">
             <div class="card-content">
                 <div class="col-md-8">
-                    <h5><span class="maldade">{{ data.count }}</span> maldosos já fizeram essa maldade!</h5> 
+                    <h5><span id="sumOfAllEvil" class="maldade">{{ data.count }}</span> maldosos já fizeram essa maldade!</h5>
                     <h3>Hoje é dia de </h3><span class="maldade">{{ data.title }}</span>
                     &nbsp;
                 </div>
@@ -338,12 +348,34 @@
     ga('create', 'UA-47755345-6', 'auto');
     ga('send', 'pageview');
 
+    var sumOfAllEvil = {{data.count}};
+    var totalEvil = {{totalEvil}};
+
+
+
+
     function doEvil(friendlyUrl){
         console.log("POST " + friendlyUrl);
 
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", "/" + friendlyUrl, true);
         xhttp.send();
+
+        sumOfAllEvil++;
+        totalEvil++;
+
+        var sumOfAllEvilDiv = document.getElementById("sumOfAllEvil");
+        var evilsDoneDIv = document.getElementById("evilsDone");
+        sumOfAllEvilDiv.style.opacity = 0;
+        evilsDoneDIv.style.opacity = 0;
+
+        setTimeout(function() {
+            sumOfAllEvilDiv.innerHTML = sumOfAllEvil;
+            sumOfAllEvilDiv.style.opacity = 1;
+
+            evilsDoneDIv.innerHTML = totalEvil;
+            evilsDoneDIv.style.opacity = 1;
+        }, 500);
     }
 
 

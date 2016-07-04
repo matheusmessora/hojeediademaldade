@@ -311,6 +311,14 @@ module.exports = function EvilService(dependencies) {
         evil.count = evil.count+1;
     };
 
+    var evilsDone = function () {
+        return data.map(evil => evil.count ).reduce((first, second) => first + second);
+    };
+
+    var totalEvils = function () {
+        return data.length;
+    };
+
     var findByFriendlyURL = function(friendlyUrl) {
         for (var i = 0; i < data.length; i++) {
             var evil = data[i];
@@ -322,6 +330,8 @@ module.exports = function EvilService(dependencies) {
     };
 
     return {
+        evilsDone: evilsDone,
+        totalEvils: totalEvils,
         newEvil: newEvil,
         doEvil: doEvil,
         findByFriendlyURL: findByFriendlyURL
