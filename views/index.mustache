@@ -40,15 +40,12 @@
     <style>
 
         html {
-            /*background: #6441A5; !* fallback for old browsers *!*/
-            /*background: -webkit-linear-gradient(to left, #6441A5 , #2a0845); !* Chrome 10-25, Safari 5.1-6 *!*/
-            /*background: linear-gradient(to left, #6441A5 , #2a0845); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
-            background: #4b6cb7; /* fallback for old browsers */
-            background: -webkit-linear-gradient(to bottom, #303030 , #101010); /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to bottom, #303030 , #101010); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            /*background: -webkit-linear-gradient(to bottom, #303030 , #101010); 
+            background: linear-gradient(to bottom, #303030 , #101010); */
+            background: #FAFAFA;
 
             height: 100%;
-            border-top: 20px solid #{{ data.css.accent }};
+            border-top: 20px solid #00C853;
 
             -webkit-box-shadow: inset 0px 6px 10px 0px rgba(0,0,0,0.25);
             -moz-box-shadow: inset 0px 6px 10px 0px rgba(0,0,0,0.25);
@@ -56,7 +53,8 @@
         }
         body {
             background: none;
-            color: #CFD8DC;
+            color: rgba(0, 0, 0, 0.87);
+            /*color: #CFD8DC;*/
             font-family: 'Open Sans', Helvetica Neue, sans-serif;
 
         }
@@ -77,24 +75,20 @@
             display: inline;
             /*text-transform: uppercase;*/
         }
-        h4 {
-            margin-top: 60px;
-        }
-        .maldade {
-            font-weight: 800;
-            color: #FFF;
-            font-size: 50px;
-        }
-        h4 .maldade {
+        h5 {
             font-size: 18px;
         }
         .maldade {
-            /*text-decoration: underline;*/
-            color: #FFF;
+            font-weight: 800;
+            font-size: 50px;
+        }
+        h5 .maldade {
+            font-size: 18px;
+            color: #00C853;
         }
         .highlight {
             font-weight: 600;
-            color: #FFF;
+            color: #F44336;
         }
         .footer {
             text-align: right;
@@ -137,7 +131,78 @@
         }
 
 
+        .card {
+            position: relative;
+            margin: 0.5rem 0 1rem 0;
+            background-color: #FFFFFF;
+            transition: box-shadow .25s;
+            border-radius: 2px;
+        }
+        .card-stats {
+            background: #C62828;
+            color: #FFFFFF;
+        }
+        .card-content {
+                padding: 20px 0;
+                border-radius: 0 0 2px 2px;
+        }
+        .card-footer {
+            border-top: 1px solid rgba(160,160,160,0.2);
+            padding: 20px 0;
+        } 
+        .card-footer .fa {
+            color: #00C853;
+        }
+        .card-content h4 {
+            font-size: 52px;
+            font-weight: 600;
+            text-align: center;
+            margin: 0;
+        }
+        .card-stats h5 {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        .card-share {
+            background: #00C853;
+        }
+        .card-share .fa{
+            font-size: 80px;
+        }
+
+        .z-depth-1 {
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+        }
+        .z-depth-2 {
+            box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)  ;
+        }
+
+        a {
+            text-transform: uppercase;
+            color: #00C853;
+            padding: 0 8px;
+            font-size: 16px;
+            font-weight: 600;
+            /*display: block;*/
+        }
+        a:hover, a:active, a:visited {
+            text-decoration: none;
+            color: #00C853;   
+        }
+
+
         @media (max-width: 768px) {
+            a {
+                font-size: 22px;
+                padding: 8px;
+            }
+            a .fa {
+                font-size: 26px;
+            }
+            a .glyphicon {
+                font-size: 22px;   
+            }
             .evil-holder {
                 border-top: 1px solid #F44336;
                 padding-top: 15px;
@@ -186,47 +251,69 @@
             <!--<h4>{{online}} maldoso online</h4>-->
         </div>
     </div>
-    <div class="row evil-holder">
-        <div class="col-md-8">
-            <h3>Hoje é dia de </h3><span class="maldade">{{ data.title }}</span>
-            <h4><span class="maldade">{{ data.count }}</span> maldosos já fizeram essa maldade!</h4>
+
+    <div class="row">
+
+        <div class="col-md-4 col-xs-6 col-sm-6">
+            <div class="card z-depth-1 card-stats">
+                <div class="card-content">
+                    <h4>42</h4>
+                    <h5>maldades</h5>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4 hidden-sm hidden-xs">
-            <img id="maldade-img" src="{{ data.img }}" alt="Smiley face" width="100%" height="100%">
+         <div class="col-md-4 col-xs-6 col-sm-6">
+            <div class="card z-depth-1 card-stats">
+                <div class="card-content">
+                    <h4>132</h4>
+                    <h5>compartilhadas</h5>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-12 col-sm-12">
+            <div class="card z-depth-1 card-stats">
+                <div class="card-content">
+                    <h4>527</h4>
+                    <h5>maldades feitas</h5>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="row actions hidden-sm hidden-xs">
-        <div class="col-md-4">
-            <button type="button" class="btn btn-primary btn-lg" onclick="doEvil('{{ data.friendly_url}}');" ><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Já fiz essa maldade</button>
-        </div>
-        <div class="col-md-4">
-            <!--<div class="fb-share-button" data-href="http://www.hojeediademaldade.com.br/" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.hojeediademaldade.com.br%2F&amp;src=sdkpreparse">Compartilhar</a></div>-->
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.hojeediademaldade.com.br%2F{{ data.friendly_url }}" target="_blank">
-                <button type="button" class="btn btn-primary btn-lg" ><i class="fa fa-facebook-square" aria-hidden="true"></i>
-                    Compartilhar</button>
-            </a>
-        </div>
-        <div class="col-md-4">
-            <a href="/{{newEvil.friendly_url}}">
-                <button type="button" class="btn btn-primary btn-lg" ><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Próxima maldade</button>
-            </a>
+    <div class="row evil-holder card z-depth-1">
+        <div class="col-md-12">
+            <div class="card-content">
+                <div class="col-md-8">
+                    <h5><span class="maldade">{{ data.count }}</span> maldosos já fizeram essa maldade!</h5> 
+                    <h3>Hoje é dia de </h3><span class="maldade">{{ data.title }}</span>
+                    &nbsp;
+                </div>
+                <div class="col-md-4">
+                     <a href="#">
+                      <img id="maldade-img" src="{{ data.img }}" alt="Smiley face" width="100%" height="100%">
+                    </a>
+                </div>&nbsp;
+            </div>
+
+            <div class="card-footer hidden-sm hidden-xs">
+                <a href="#" onclick="doEvil('{{ data.friendly_url}}');" >Fazer maldade</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.hojeediademaldade.com.br%2F{{ data.friendly_url }}">compartilhar</a>
+            </div>  
+            <div class="card-footer hidden-md hidden-lg">
+                <a href="#" onclick="doEvil('{{ data.friendly_url}}');" ><span class="glyphicon glyphicon-fire" aria-hidden="true"></span></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.hojeediademaldade.com.br%2F{{ data.friendly_url }}"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+            </div>  
         </div>
     </div>
-    <div class="row actions visible-sm visible-xs">
-        <div class="col-sm-12">
-            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="doEvil('{{ data.friendly_url}}');" ><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Já fiz essa maldade</button>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.hojeediademaldade.com.br%2F{{ data.friendly_url }}" target="_blank">
-                <button type="button" class="btn btn-primary btn-lg btn-block" ><i class="fa fa-facebook-square" aria-hidden="true"></i>
-                    Compartilhar</button>
-            </a>
+
+    <div class="row actions">
+        
+        <div class="col-md-12">
             <a href="/{{newEvil.friendly_url}}">
-                <button type="button" class="btn btn-primary btn-lg btn-block" ><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Próxima maldade</button>
+                <button type="button" class="btn btn-primary btn-lg" >Próxima maldade <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
             </a>
         </div>
-
-
-
     </div>
 
     <div class="row footer" style="display: none;">
