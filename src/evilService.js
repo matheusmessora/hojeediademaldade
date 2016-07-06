@@ -297,6 +297,17 @@ module.exports = function EvilService(dependencies) {
                 background: "303030",
                 accent: "0288D1"
             }
+        },
+
+        {
+            count: 0,
+            friendly_url: "fazer-style-inline",
+            title: "fazer style inline",
+            img: "http://img.pandawhale.com/56193-Whenever-I-try-to-open-blinds-1kSs.gif",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
         }
 
     ];
