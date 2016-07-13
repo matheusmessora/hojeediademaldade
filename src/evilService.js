@@ -63,7 +63,7 @@ module.exports = function EvilService(dependencies) {
         {
             count: 17,
             friendly_url: "passar-correndo-na-frente-dos-camelos-e-gritar-o-rapa",
-            title: "passar correndo nos camelos e gritar OOOh Rapaaaa!",
+            title: "passar correndo nos camelôs e gritar OOOh Rapaaaa!",
             img: "http://oglobo.globo.com/fotos/2011/09/15/15_MHG_RIO_camelo.jpg",
             css: {
                 background: "303030",
