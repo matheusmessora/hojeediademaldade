@@ -3,6 +3,7 @@ module.exports = function EvilService(dependencies) {
     this.dependencies = dependencies;
 
     this.random = dependencies.random;
+    this.cache = dependencies.cache;
 
     var data = [
         {
@@ -53,7 +54,7 @@ module.exports = function EvilService(dependencies) {
             count: 52,
             friendly_url: "escutar-funk-proibidao-no-spotify-no-ultimo-volume",
             title: "escutar funk proibidão no spotify no ultimo volume",
-            img: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-141499087849/static/bondetigrao.jpg",
+            img: "https://i.ytimg.com/vi/hrGSmH2VQ0I/hqdefault.jpg",
             css: {
                 background: "303030",
                 accent: "F44336",
@@ -308,6 +309,17 @@ module.exports = function EvilService(dependencies) {
                 background: "303030",
                 accent: "0288D1"
             }
+        },
+
+        {
+            count: 0,
+            friendly_url: "discordar-waze",
+            title: "discordar do waze e se dar mal",
+            img: "http://neurogadget.net/wp-content/uploads/2015/10/Google-Maps-Waze.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
         }
 
     ];
@@ -317,9 +329,13 @@ module.exports = function EvilService(dependencies) {
         return data[randomInt];
     };
 
-    var doEvil = function (friendlyUrl) {
-        var evil = findByFriendlyURL(friendlyUrl);
-        evil.count = evil.count+1;
+    var doEvil = function (friendlyUrl, callback) {
+        function increaseEvil(err, evil) {
+            evil.count = evil.count + 1;
+            cacheIt(err, evil, callback);
+        }
+
+        findByFriendlyURL(friendlyUrl, increaseEvil);
     };
 
     var evilsDone = function () {
@@ -330,14 +346,45 @@ module.exports = function EvilService(dependencies) {
         return data.length;
     };
 
-    var findByFriendlyURL = function(friendlyUrl) {
+    var findByFriendlyURL = function(friendlyUrl, callback) {
+        var evil
+        var err
         for (var i = 0; i < data.length; i++) {
-            var evil = data[i];
-            if(evil.friendly_url === friendlyUrl){
-                return evil;
+            if(data[i].friendly_url === friendlyUrl){
+                evil = data[i];
+                cache.get(evil.friendly_url, function(cacheErr, data){
+                    err = cacheErr;
+
+                    if(data){
+                        evil.count = data.count;
+                    }
+                })
             }
         }
-        return {};
+        if(!evil){
+            err = { error: 'Evil not found' }
+        }
+
+        callback(err, evil);
+    };
+
+    var cacheIt = function(err, evil, callback){
+        console.log("CACHING evil" + evil.friendly_url);
+        if(err){
+            console.log("ERROR CACHING evil" + evil.friendly_url + ",err" + err);
+            return callback(err)
+        }
+
+        // CACHE EVIL
+        cache.set(evil.friendly_url, evil, 0, function(err){
+            if(err){
+                console.error("FAILED TO CACHE: " + evil.friendly_url + "=" + evil.count + ", err=" + err);
+            }else {
+                console.log("CACHE OK: " + evil.friendly_url + "=" + evil.count);
+            }
+
+            callback(err);
+        });
     };
 
     return {
