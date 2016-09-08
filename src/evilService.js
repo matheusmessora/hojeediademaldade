@@ -320,6 +320,17 @@ module.exports = function EvilService(dependencies) {
                 background: "303030",
                 accent: "0288D1"
             }
+        },
+
+        {
+            count: 4,
+            friendly_url: "mandar-funcionario-embora",
+            title: "mandar algum funcionário embora",
+            img: "http://bbb17.co/wp-content/uploads/2015/07/vota%C3%A7%C3%A3o-bbb-16.jpg",
+            css: {
+                background: "303030",
+                accent: "0288D1"
+            }
         }
 
     ];
