@@ -341,12 +341,10 @@ module.exports = function EvilService(dependencies) {
     };
 
     var doEvil = function (friendlyUrl, callback) {
-        function increaseEvil(err, evil) {
+        findByFriendlyURL(friendlyUrl, function(err, evil){
             evil.count = evil.count + 1;
             cacheIt(err, evil, callback);
-        }
-
-        findByFriendlyURL(friendlyUrl, increaseEvil);
+        });
     };
 
     var evilsDone = function () {
@@ -358,43 +356,47 @@ module.exports = function EvilService(dependencies) {
     };
 
     var findByFriendlyURL = function(friendlyUrl, callback) {
+        console.log("[DEBUG] findByFriendlyURL", friendlyUrl)
         var evil
-        var err
         for (var i = 0; i < data.length; i++) {
             if(data[i].friendly_url === friendlyUrl){
                 evil = data[i];
-                cache.get(evil.friendly_url, function(cacheErr, data){
-                    err = cacheErr;
-
-                    if(data){
-                        evil.count = data.count;
-                    }
-                })
             }
         }
         if(!evil){
-            err = { error: 'Evil not found' }
+            return callback({ error: 'Evil not found' }, {});
         }
 
-        callback(err, evil);
+        cache.get(evil.friendly_url, function(err, data){
+            if (err) {
+                return callback(err, {});
+            }
+
+            evil.count = data;
+            if(!data){
+                evil.count = 4;
+            }
+            callback(null, evil)
+        })
+
     };
 
     var cacheIt = function(err, evil, callback){
-        console.log("CACHING evil" + evil.friendly_url);
+        console.log("CACHING evil=" + evil.friendly_url);
         if(err){
             console.log("ERROR CACHING evil" + evil.friendly_url + ",err" + err);
             return callback(err)
         }
 
         // CACHE EVIL
-        cache.set(evil.friendly_url, evil, 0, function(err){
+        cache.set(evil.friendly_url, evil.count, 0, function(err){
             if(err){
                 console.error("FAILED TO CACHE: " + evil.friendly_url + "=" + evil.count + ", err=" + err);
             }else {
                 console.log("CACHE OK: " + evil.friendly_url + "=" + evil.count);
             }
 
-            callback(err);
+            callback(err, evil);
         });
     };
 
