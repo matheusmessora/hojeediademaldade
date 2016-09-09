@@ -64,6 +64,16 @@ app.get('/favicon.ico', function (req, res) {
     res.sendStatus(404)
 })
 
+app.get('/flushall', function (req, res) {
+    cache.flushAll(function(err ){
+        if(err) res.sendStatus(500);
+        cache.set("evilsDone", 0, 0, function(err){
+            if(err) res.sendStatus(500);
+            res.sendStatus(201);
+        });
+    });
+})
+
 app.get('/:friendly_url', function (req, res) {
     evilService.findByFriendlyURL(req.params.friendly_url, function (err, evil) {
         if(err){
