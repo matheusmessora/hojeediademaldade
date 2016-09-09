@@ -58,7 +58,7 @@ app.post('/:friendly_url', function (req, res) {
 });
 
 app.get('/favicon.ico', function (req, res) {
-
+    res.sendStatus(404)
 })
 
 app.get('/:friendly_url', function (req, res) {
