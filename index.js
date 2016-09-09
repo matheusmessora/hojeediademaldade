@@ -12,8 +12,6 @@ var memcached = new Memcached('web-cluster.acg4mh.0001.use1.cache.amazonaws.com:
     timeout: 5000
 });
 
-
-
 app.set('views', path.resolve(__dirname, './views'));
 
 // Register '.mustache' extension with The Mustache Express
@@ -32,17 +30,21 @@ var evilService = require('./src/evilService')({
 
 
 app.get('/', function (req, res) {
-    let evil = evilService.newEvil();
-    let newEvil = evilService.newEvil();
     let totalEvil = evilService.totalEvils();
-    let evilsDone = evilService.evilsDone();
-    res.render('index', {
-        data: evil,
-        online: 1,
-        newEvil: newEvil,
-        totalEvil: totalEvil,
-        evilsDone: evilsDone
-    });
+
+    evilService.newEvil(null, function(err, evil){
+        evilService.newEvil(err, function(err, nextEvil){
+            evilService.evilsDone(err, function(err, evilsDone) {
+                res.render('index', {
+                    data: evil,
+                    online: 1,
+                    newEvil: nextEvil,
+                    totalEvil: totalEvil,
+                    evilsDone: evilsDone
+                });
+            });
+        })
+    })
 });
 
 app.post('/:friendly_url', function (req, res) {
@@ -55,6 +57,7 @@ app.post('/:friendly_url', function (req, res) {
             res.sendStatus(200)
         }
     });
+
 });
 
 app.get('/favicon.ico', function (req, res) {
@@ -65,18 +68,22 @@ app.get('/:friendly_url', function (req, res) {
     evilService.findByFriendlyURL(req.params.friendly_url, function (err, evil) {
         if(err){
             console.error("err", err);
-            res.status(500);
+            res.sendStatus(500);
         }else {
-            var newEvil = evilService.newEvil();
             let totalEvil = evilService.totalEvils();
-            let evilsDone = evilService.evilsDone();
-            res.render('index', {
-                data: evil,
-                online: 1,
-                newEvil: newEvil,
-                totalEvil: totalEvil,
-                evilsDone: evilsDone
-            });
+            evilService.newEvil(err, function(err, evil){
+                evilService.newEvil(err, function(err, nextEvil){
+                    evilService.evilsDone(err, function(err, evilsDone) {
+                        res.render('index', {
+                            data: evil,
+                            online: 1,
+                            newEvil: nextEvil,
+                            totalEvil: totalEvil,
+                            evilsDone: evilsDone
+                        });
+                    });
+                })
+            })
         }
     });
 

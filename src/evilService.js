@@ -10,7 +10,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "instalar-baidu",
             title: "instalar o BAIDU!",
-            img: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-141499087849/static/baidu.jpg",
+            img: "http://antivirusbaixar.com/wp-content/uploads/2015/10/baixar-baidu.png",
             css: {
                 background: "303030",
                 accent: "F44336",
@@ -18,7 +18,7 @@ module.exports = function EvilService(dependencies) {
             }
         },
         {
-            count: 42,
+            count: 87,
             friendly_url: "chamar-taxi-e-uber-ao-mesmo-tempo",
             title: "chamar taxi e Uber ao mesmo tempo!",
             img: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-141499087849/static/uber.jpg",
@@ -29,7 +29,7 @@ module.exports = function EvilService(dependencies) {
             }
         },
         {
-            count: 87,
+            count: 0,
             friendly_url: "fazer-while-true-no-codigo",
             title: "fazer WHILE true no código",
             img: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-141499087849/static/whiletrue.jpg",
@@ -335,21 +335,45 @@ module.exports = function EvilService(dependencies) {
 
     ];
 
-    var newEvil = function() {
+
+
+    function newEvil(err, callback) {
         var randomInt = random.randomInt(0,data.length);
-        return data[randomInt];
-    };
+        findByFriendlyURL(data[randomInt].friendly_url, callback)
+    }
 
     var doEvil = function (friendlyUrl, callback) {
+
         findByFriendlyURL(friendlyUrl, function(err, evil){
             evil.count = evil.count + 1;
-            cacheIt(err, evil, callback);
+            cacheEvil(err, evil, function(err, evil){
+
+                increaseEvilsDone(err, function(err){
+                    callback(err, evil)
+                })
+            });
         });
+
+
     };
 
-    var evilsDone = function () {
-        return data.map(evil => evil.count ).reduce((first, second) => first + second);
-    };
+    function evilsDone(err, callback) {
+
+        cache.get("evilsDone", function(err, data){
+            if (err) {
+                return callback(err, null);
+            }
+
+            var evilsDone = 0;
+            if(data){
+                evilsDone = data;
+            }else {
+                cache.set("evilsDone", 0, 0, function(err){});
+            }
+            console.log("[DEBUG] evilsDone", evilsDone)
+            callback(null, evilsDone)
+        })
+    }
 
     var totalEvils = function () {
         return data.length;
@@ -358,6 +382,7 @@ module.exports = function EvilService(dependencies) {
     var findByFriendlyURL = function(friendlyUrl, callback) {
         console.log("[DEBUG] findByFriendlyURL", friendlyUrl)
         var evil
+        var data = getData();
         for (var i = 0; i < data.length; i++) {
             if(data[i].friendly_url === friendlyUrl){
                 evil = data[i];
@@ -367,24 +392,29 @@ module.exports = function EvilService(dependencies) {
             return callback({ error: 'Evil not found' }, {});
         }
 
-        cache.get(evil.friendly_url, function(err, data){
+        cache.get(evil.friendly_url, function(err, evilCount){
             if (err) {
                 return callback(err, {});
             }
 
-            evil.count = data;
-            if(!data){
-                evil.count = 4;
+            evil.count = 0;
+            if(evilCount){
+                evil.count = evilCount;
             }
+            console.log("[DEBUG] FOUND ", friendlyUrl, evil.count)
             callback(null, evil)
         })
 
     };
 
-    var cacheIt = function(err, evil, callback){
-        console.log("CACHING evil=" + evil.friendly_url);
+    function getData(){
+        return data;
+    }
+
+    var cacheEvil = function(err, evil, callback){
+        console.log("[DEBUG] CACHING evil=" + evil.friendly_url);
         if(err){
-            console.log("ERROR CACHING evil" + evil.friendly_url + ",err" + err);
+            console.log("[ERROR] CACHING evil" + evil.friendly_url + ",err" + err);
             return callback(err)
         }
 
@@ -395,10 +425,19 @@ module.exports = function EvilService(dependencies) {
             }else {
                 console.log("CACHE OK: " + evil.friendly_url + "=" + evil.count);
             }
-
-            callback(err, evil);
+            callback(err, evil)
         });
     };
+
+
+    function increaseEvilsDone(err, callback){
+        cache.incr('evilsDone', 1, function (err) {
+            if(err){
+                console.error(err)
+            }
+            callback(err);
+        });
+    }
 
     return {
         evilsDone: evilsDone,
