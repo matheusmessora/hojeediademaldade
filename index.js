@@ -5,12 +5,13 @@ var path = require('path');
 var mustacheExpress = require('mustache-express');
 
 var Memcached = require('memcached');
-var memcached = new Memcached('192.168.99.100:11211', {
-    timeout: 5000
-});
-// var memcached = new Memcached('web-cluster.acg4mh.0001.use1.cache.amazonaws.com:11211', {
+// var memcached = new Memcached('192.168.99.100:11211', {
 //     timeout: 5000
 // });
+var memcached = new Memcached('web-cluster.acg4mh.0001.use1.cache.amazonaws.com:11211', {
+    timeout: 5000
+});
+
 
 
 app.set('views', path.resolve(__dirname, './views'));
