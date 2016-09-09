@@ -14,6 +14,10 @@ var memcached = new Memcached('web-cluster.acg4mh.0001.use1.cache.amazonaws.com:
 
 
 
+
+
+
+
 app.set('views', path.resolve(__dirname, './views'));
 
 // Register '.mustache' extension with The Mustache Express
