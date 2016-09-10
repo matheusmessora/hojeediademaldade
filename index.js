@@ -1,14 +1,15 @@
 "use strict";
+process.env.NODE_ENV = process.env.NODE_ENV || 'local';
+
 var express = require('express');
 var app = express();
 var path = require('path');
 var mustacheExpress = require('mustache-express');
 
 var Memcached = require('memcached');
-// var memcached = new Memcached('192.168.99.100:11211', {
-//     timeout: 5000
-// });
-var memcached = new Memcached('web-cluster.acg4mh.0001.use1.cache.amazonaws.com:11211', {
+var ConfigService = require('./src/config'),
+    conf = new ConfigService();
+var memcached = new Memcached(conf.memcached.ip, {
     timeout: 5000
 });
 
@@ -105,5 +106,6 @@ app.get('/:friendly_url', function (req, res) {
 });
 
 app.listen(app.get('port'), function () {
-    console.log('Example app listening on port ' + app.get('port'));
+    console.log('APP STARTED. NODE_ENV=' + process.env.NODE_ENV);
+    console.log('Listening on port ' + app.get('port'));
 });
