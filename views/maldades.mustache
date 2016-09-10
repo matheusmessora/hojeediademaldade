@@ -207,7 +207,6 @@
 			padding: 0 8px;
 			font-size: 16px;
 			font-weight: 600;
-			/*display: block;*/
 		}
 
 		a:hover, a:active, a:visited {
@@ -215,13 +214,28 @@
 			color: #03a9f4;
 		}
 
+		a.evil {
+			color: #FFF;
+			text-transform: none;
+			/*height: 85px;*/
+			vertical-align: middle;
+			margin-top: 10px;
+			border: 1px solid #03a9f4;
+			display: block;
+			width: 100%;
+			padding: 13px;
+		}
+		a.evil:hover {
+			border: 1px solid #FFF;
+		}
+
 		/** EFFECTS **/
-		#sumOfAllEvil, #evilsDone {
-			-webkit-transition: opacity .5s ease-in-out;
-			-moz-transition: opacity .5s ease-in-out;
-			-ms-transition: opacity .5s ease-in-out;
-			-o-transition: opacity .5s ease-in-out;
-			transition: opacity .5s ease-in-out;
+		.ease-in-out {
+			-webkit-transition: all .3s ease-in-out;
+			-moz-transition: all .3s ease-in-out;
+			-ms-transition: all .3s ease-in-out;
+			-o-transition: all .3s ease-in-out;
+			transition: all .3s ease-in-out;
 		}
 
 		.navbar-default {
@@ -229,7 +243,7 @@
 			border-color: #F44336;
 		}
 		.navbar-default .navbar-brand {
-			color: #FFF;
+			color:  rgba(255, 255, 255, 0.75);
 		}
 		.navbar-default .navbar-toggle {
 			background-color: #C62828;
@@ -237,6 +251,9 @@
 		}
 		.navbar-default .navbar-toggle .icon-bar {
 			background-color: #FFF;
+		}
+		.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+			color: #FFF;
 		}
 
 		@media (max-width: 768px) {
@@ -255,6 +272,7 @@
 
 			.evil-holder {
 				border-top: 1px solid #F44336;
+				padding-top: 15px;
 			}
 
 			.main {
@@ -300,28 +318,13 @@
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
-		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
-			<!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
-				<!--<span class="sr-only">Toggle navigation</span>-->
-				<!--<span class="icon-bar"></span>-->
-				<!--<span class="icon-bar"></span>-->
-				<!--<span class="icon-bar"></span>-->
-			<!--</button>-->
 			<a class="navbar-brand" href="/">Home</a>
 			<a class="navbar-brand" href="/maldades">Maldades</a>
 		</div>
 
 	</div><!-- /.container-fluid -->
 </nav>
-<!--<nav class="navbar navbar-default navbar-fixed-top">-->
-	<!--<div class="container">-->
-		<!--<div class="navbar-header">-->
-			<!--<a class="navbar-brand" href="/">Home</a>-->
-			<!--<a class="navbar-brand" href="/maldades">Maldades</a>-->
-		<!--</div>-->
-	<!--</div>-->
-<!--</nav>-->
 
 <div class="container">
 
@@ -332,69 +335,20 @@
 		</div>
 	</div>
 
-	<div class="row">
-
-		<div class="col-md-4 col-xs-6 col-sm-6">
-			<div class="card z-depth-1 card-stats">
-				<div class="card-content">
-					<h4>{{ totalEvil }}</h4>
-					<h5>maldades</h5>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 col-xs-6 col-sm-6">
-			<div class="card z-depth-1 card-stats">
-				<div class="card-content">
-					<h4>132</h4>
-					<h5>compartilhadas</h5>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-md-4 col-xs-12 col-sm-12">
-			<div class="card z-depth-1 card-stats">
-				<div class="card-content">
-					<h4 id="evilsDone">{{ evilsDone }}</h4>
-					<h5>maldades feitas</h5>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<div class="row evil-holder card z-depth-2">
 		<div class="col-md-12">
-			<div class="card-content row">
-				<div class="col-md-8">
-					<h5><span id="sumOfAllEvil" class="maldadeCount">{{ data.count }}</span> maldosos já fizeram essa
-						maldade!</h5>
-					<h3>Hoje é dia de </h3><span class="maldade">{{ data.title }}</span>
-				</div>
-				<div class="col-md-4">
-					<img id="maldade-img" src="{{ data.img }}" width="100%" height="100%">
-				</div>
-			</div>
-			<div class="clearfix"></div>
+			<div class="card-content">
+				<h2>Maldades cadastradas</h2>
+				<br />
+				{{#evils}}
+					<div class="col-xs-12 col-sm-12 col col-md-6 col-lg-6">
+						<a href="/{{friendly_url}}" class="evil ease-in-out">
+							{{title}}
+						</a>
+					</div>
 
-			<div class="card-footer hidden-sm hidden-xs">
-				<a href="#" onclick="doEvil('{{ data.friendly_url}}');">Fazer maldade</a>
-				<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.hojeediademaldade.com.br%2F{{ data.friendly_url }}">compartilhar</a>
+				{{/evils}}
 			</div>
-			<div class="card-footer hidden-md hidden-lg">
-				<a href="#" onclick="doEvil('{{ data.friendly_url}}');"><span class="glyphicon glyphicon-fire"
-				                                                              aria-hidden="true"></span></a>
-				<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.hojeediademaldade.com.br%2F{{ data.friendly_url }}"><i
-						class="fa fa-facebook-square" aria-hidden="true"></i></a>
-			</div>
-		</div>
-	</div>
-
-	<div class="row actions">
-
-		<div class="col-md-12">
-			<a href="/{{newEvil.friendly_url}}">
-				<button type="button" class="btn btn-primary btn-lg">Próxima maldade <span
-						class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
-			</a>
 		</div>
 	</div>
 
@@ -440,34 +394,6 @@
 
 	ga('create', 'UA-47755345-6', 'auto');
 	ga('send', 'pageview');
-
-	var sumOfAllEvil = {{data.count}};
-	var totalEvil = {{evilsDone}};
-
-
-	function doEvil(friendlyUrl) {
-		console.log("POST " + friendlyUrl);
-
-		var xhttp = new XMLHttpRequest();
-		xhttp.open("POST", "/" + friendlyUrl, true);
-		xhttp.send();
-
-		sumOfAllEvil++;
-		totalEvil++;
-
-		var sumOfAllEvilDiv = document.getElementById("sumOfAllEvil");
-		var evilsDoneDIv = document.getElementById("evilsDone");
-		sumOfAllEvilDiv.style.opacity = 0;
-		evilsDoneDIv.style.opacity = 0;
-
-		setTimeout(function () {
-			sumOfAllEvilDiv.innerHTML = sumOfAllEvil;
-			sumOfAllEvilDiv.style.opacity = 1;
-
-			evilsDoneDIv.innerHTML = totalEvil;
-			evilsDoneDIv.style.opacity = 1;
-		}, 500);
-	}
 
 </script>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />

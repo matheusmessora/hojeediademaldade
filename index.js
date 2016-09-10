@@ -5,12 +5,12 @@ var path = require('path');
 var mustacheExpress = require('mustache-express');
 
 var Memcached = require('memcached');
-// var memcached = new Memcached('192.168.99.100:11211', {
-//     timeout: 5000
-// });
-var memcached = new Memcached('web-cluster.acg4mh.0001.use1.cache.amazonaws.com:11211', {
+var memcached = new Memcached('192.168.99.100:11211', {
     timeout: 5000
 });
+// var memcached = new Memcached('web-cluster.acg4mh.0001.use1.cache.amazonaws.com:11211', {
+//     timeout: 5000
+// });
 
 app.set('views', path.resolve(__dirname, './views'));
 
@@ -74,6 +74,13 @@ app.get('/flushall', function (req, res) {
     });
 })
 
+app.get('/maldades', function(req, res){
+    res.render('maldades', {
+        evils: evilService.getData
+    });
+})
+
+
 app.get('/:friendly_url', function (req, res) {
     evilService.findByFriendlyURL(req.params.friendly_url, function (err, evil) {
         if(err){
@@ -81,18 +88,16 @@ app.get('/:friendly_url', function (req, res) {
             res.sendStatus(500);
         }else {
             let totalEvil = evilService.totalEvils();
-            evilService.newEvil(err, function(err, evil){
-                evilService.newEvil(err, function(err, nextEvil){
-                    evilService.evilsDone(err, function(err, evilsDone) {
-                        res.render('index', {
-                            data: evil,
-                            online: 1,
-                            newEvil: nextEvil,
-                            totalEvil: totalEvil,
-                            evilsDone: evilsDone
-                        });
+            evilService.newEvil(err, function(err, nextEvil){
+                evilService.evilsDone(err, function(err, evilsDone) {
+                    res.render('index', {
+                        data: evil,
+                        online: 1,
+                        newEvil: nextEvil,
+                        totalEvil: totalEvil,
+                        evilsDone: evilsDone
                     });
-                })
+                });
             })
         }
     });

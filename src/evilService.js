@@ -21,7 +21,7 @@ module.exports = function EvilService(dependencies) {
             count: 87,
             friendly_url: "chamar-taxi-e-uber-ao-mesmo-tempo",
             title: "chamar taxi e Uber ao mesmo tempo!",
-            img: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-141499087849/static/uber.jpg",
+            img: "http://static1.businessinsider.com/image/542eedabeab8ea7c105c0cc4-480/uber-vs-taxi-title-card.png",
             css: {
                 background: "303030",
                 accent: "F44336",
@@ -32,7 +32,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "fazer-while-true-no-codigo",
             title: "fazer WHILE true no código",
-            img: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-141499087849/static/whiletrue.jpg",
+            img: "https://s31.postimg.io/dghsy71aj/Screen_Shot_2016_07_12_at_22_27_08.png",
             css: {
                 background: "303030",
                 accent: "F44336",
@@ -43,7 +43,7 @@ module.exports = function EvilService(dependencies) {
             count: 9,
             friendly_url: "abrir-o-ie",
             title: "abrir o IE",
-            img: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-141499087849/static/ie8.jpg",
+            img: "http://www.saveie6.com/_img/img_aboutie6.gif",
             css: {
                 background: "303030",
                 accent: "F44336",
@@ -193,7 +193,7 @@ module.exports = function EvilService(dependencies) {
         {
             count: 0,
             friendly_url: "curtir-proprio-comentario",
-            title: "curtir o proprio comentário",
+            title: "curtir o próprio comentário",
             img: "http://www.uhull.com.br/wp-content/uploads/2008/10/017_pics-399x263.jpg",
             css: {
                 background: "303030",
@@ -440,6 +440,7 @@ module.exports = function EvilService(dependencies) {
     }
 
     return {
+        getData: getData,
         evilsDone: evilsDone,
         totalEvils: totalEvils,
         newEvil: newEvil,
