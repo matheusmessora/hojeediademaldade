@@ -201,6 +201,13 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "mandar-funcionario-embora",
             title: "mandar algum funcionário embora",
             img: "http://bbb17.co/wp-content/uploads/2015/07/vota%C3%A7%C3%A3o-bbb-16.jpg",
+        },
+
+        {
+            count: 0,
+            friendly_url: "ir-trabalhar-com-conjuntivite",
+            title: "ir trabalhar com conjuntivite",
+            img: "http://i1.allaboutvision.com/i/buysmart-2016/eye-drop-into-eye-330x260.jpg",
         }
 
     ];
