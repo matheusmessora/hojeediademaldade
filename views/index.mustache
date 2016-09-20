@@ -21,6 +21,7 @@
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/css/style.css">
 
 	<!-- Twitter Card data -->
 	<!--<meta name="twitter:card" content="summary">-->
@@ -38,262 +39,6 @@
 	<meta property="og:image" content="https://venancios.files.wordpress.com/2013/04/gordo.jpg"/>
 	<meta property="og:description" content="Hoje é dia de maldade, hoje é dia de {{data.title}}"/>
 	<meta property="og:site_name" content="Hoje é dia de maldade!"/>
-
-	<style>
-
-		html {
-			/*background: -webkit-linear-gradient(to bottom, #303030 , #101010);
-            background: linear-gradient(to bottom, #303030 , #101010); */
-			background: #303030;
-
-			/*height: 100%;*/
-			/*border-top: 20px solid #03a9f4;*/
-
-			-webkit-box-shadow: inset 0px 6px 10px 0px rgba(0, 0, 0, 0.25);
-			-moz-box-shadow: inset 0px 6px 10px 0px rgba(0, 0, 0, 0.25);
-			box-shadow: inset 0px 6px 10px 0px rgba(0, 0, 0, 0.25);
-		}
-
-		body {
-			background: none;
-			/*color: rgba(0, 0, 0, 0.87);*/
-			color: rgba(255, 255, 255, 1);
-			/*color: #CFD8DC;*/
-			font-family: 'Open Sans', Helvetica Neue, sans-serif;
-			padding-top: 70px;
-		}
-
-		h1 {
-			font-family: 'Gloria Hallelujah', cursive;
-			font-weight: 100;
-			font-size: 80px;
-			text-transform: uppercase;
-
-		}
-
-		h3 {
-			font-weight: 100;
-			font-size: 50px;
-			display: inline;
-			/*text-transform: uppercase;*/
-		}
-
-		h5 {
-			font-size: 18px;
-		}
-
-		.maldade {
-			font-weight: 800;
-			font-size: 50px;
-		}
-
-		.maldadeCount {
-
-		}
-
-		.maldadeCount {
-			font-size: 18px;
-			color: #03a9f4;
-		}
-
-		.highlight {
-			font-weight: 600;
-			color: #F44336;
-		}
-
-		.footer {
-			text-align: right;
-		}
-
-		.fa {
-			font-size: 20px;
-			color: #FFF;
-		}
-
-		.fa:hover {
-			color: #FFFFFF;
-		}
-
-		.main {
-			text-align: center;
-			margin-bottom: 50px;
-		}
-
-		.actions {
-			text-align: center;
-			margin-top: 25px;
-		}
-
-		.btn-primary {
-			background-color: #F44336;
-			border-color: #F44336;
-		}
-
-		.btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:active:hover {
-			background-color: #B71C1C;
-			border-color: #B71C1C;
-		}
-
-		.btn {
-			box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-			border: none;
-			border-radius: 2px;
-			line-height: 54px;
-			padding: 0 2rem;
-			text-transform: uppercase;
-			transition: all .3s ease-out;
-			margin-right: 8px;
-		}
-
-		.card {
-			position: relative;
-			margin: 0.5rem 0 1rem 0;
-			background-color: #424242;
-			transition: box-shadow .25s;
-			border-radius: 2px;
-		}
-
-		.card-stats {
-			background: #C62828;
-			color: #FFFFFF;
-		}
-
-		.card-content {
-			padding: 20px 0;
-			border-radius: 0 0 2px 2px;
-		}
-
-		.card-footer {
-			border-top: 1px solid rgba(160, 160, 160, 0.2);
-			padding: 20px 0;
-		}
-
-		.card-footer .fa {
-			color: #03a9f4;
-		}
-
-		.card-content h4 {
-			font-size: 52px;
-			font-weight: 600;
-			text-align: center;
-			margin: 0;
-		}
-
-		.card-stats h5 {
-			text-align: center;
-			margin-top: 15px;
-			font-size: 16px;
-		}
-
-		.card-share {
-			background: #03a9f4;
-		}
-
-		.card-share .fa {
-			font-size: 80px;
-		}
-
-		.z-depth-1 {
-			box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-		}
-
-		.z-depth-2 {
-			box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-		}
-
-		a {
-			text-transform: uppercase;
-			color: #03a9f4;
-			padding: 0 8px;
-			font-size: 16px;
-			font-weight: 600;
-			/*display: block;*/
-		}
-
-		a:hover, a:active, a:visited {
-			text-decoration: none;
-			color: #03a9f4;
-		}
-
-		/** EFFECTS **/
-		#sumOfAllEvil, #evilsDone {
-			-webkit-transition: opacity .5s ease-in-out;
-			-moz-transition: opacity .5s ease-in-out;
-			-ms-transition: opacity .5s ease-in-out;
-			-o-transition: opacity .5s ease-in-out;
-			transition: opacity .5s ease-in-out;
-		}
-
-		.navbar-default {
-			background-color: #424242;
-			border-color: #F44336;
-		}
-		.navbar-default .navbar-brand {
-			color: #FFF;
-		}
-		.navbar-default .navbar-toggle {
-			background-color: #C62828;
-			border: 0;
-		}
-		.navbar-default .navbar-toggle .icon-bar {
-			background-color: #FFF;
-		}
-
-		@media (max-width: 768px) {
-			a {
-				font-size: 22px;
-				padding: 8px;
-			}
-
-			a .fa {
-				font-size: 26px;
-			}
-
-			a .glyphicon {
-				font-size: 22px;
-			}
-
-			.evil-holder {
-				border-top: 1px solid #F44336;
-			}
-
-			.main {
-				margin-bottom: 15px;
-			}
-
-			h1 {
-				font-size: 46px;
-				margin: 0;
-			}
-
-			h3 {
-				font-size: 35px;
-				margin-bottom: 0;
-				display: block;
-			}
-
-			.maldade {
-				font-size: 35px;
-			}
-
-			h4 {
-				margin-top: 30px;
-			}
-
-			.actions {
-				margin-top: 20px;
-			}
-
-			#maldade-img {
-				margin-top: 10px;
-			}
-
-			.btn {
-				margin-top: 7px;
-			}
-		}
-
-	</style>
 
 </head>
 
@@ -390,7 +135,39 @@
 
 	<div class="row actions">
 
-		<div class="col-md-12">
+		<div class="col-md-8 hidden-md hidden-lg">
+			<p>
+				<!-- LOMADEE - BEGIN -->
+				<script type="text/javascript" language="javascript">
+					lmd_source="35639798";
+					lmd_si="33872497";
+					lmd_pu="22677397";
+					lmd_c="BR";
+					lmd_wi="300";
+					lmd_he="250";
+				</script>
+				<script src="http://image.lomadee.com/js/ad_lomadee.js" type="text/javascript" language="javascript"></script>
+				<!-- LOMADEE - END -->
+			</p>
+		</div>
+
+		<div class="col-md-8 hidden-sm hidden-xs">
+			<p>
+				<!-- LOMADEE - BEGIN -->
+				<script type="text/javascript" language="javascript">
+					lmd_source="35639777";
+					lmd_si="33791379";
+					lmd_pu="22677397";
+					lmd_c="BR";
+					lmd_wi="728";
+					lmd_he="90";
+				</script>
+				<script src="http://image.lomadee.com/js/ad_lomadee.js" type="text/javascript" language="javascript"></script>
+				<!-- LOMADEE - END -->
+			</p>
+		</div>
+
+		<div class="col-md-4">
 			<a href="/{{newEvil.friendly_url}}">
 				<button type="button" class="btn btn-primary btn-lg">Próxima maldade <span
 						class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>

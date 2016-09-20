@@ -2,6 +2,7 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'local';
 
 var express = require('express');
+
 var app = express();
 var path = require('path');
 var mustacheExpress = require('mustache-express');
@@ -20,7 +21,7 @@ app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', __dirname + '/views');
 app.set('port', (process.env.PORT || 3001));
-
+app.use(express.static('public'));
 
 // Initialize modules
 var random = require('./src/randomService')();

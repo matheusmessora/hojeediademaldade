@@ -1,0 +1,270 @@
+
+html {
+    /*background: -webkit-linear-gradient(to bottom, #303030 , #101010);
+    background: linear-gradient(to bottom, #303030 , #101010); */
+    background: #303030;
+
+    /*height: 100%;*/
+    /*border-top: 20px solid #03a9f4;*/
+
+    -webkit-box-shadow: inset 0px 6px 10px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: inset 0px 6px 10px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px 6px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+body {
+    background: none;
+    /*color: rgba(0, 0, 0, 0.87);*/
+    color: rgba(255, 255, 255, 1);
+    /*color: #CFD8DC;*/
+    font-family: 'Open Sans', Helvetica Neue, sans-serif;
+    padding-top: 70px;
+}
+
+h1 {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight: 100;
+    font-size: 80px;
+    text-transform: uppercase;
+
+}
+
+h3 {
+    font-weight: 100;
+    font-size: 50px;
+    display: inline;
+    /*text-transform: uppercase;*/
+}
+
+h5 {
+    font-size: 18px;
+}
+
+.maldade {
+    font-weight: 800;
+    font-size: 50px;
+}
+
+.maldadeCount {
+
+}
+
+.maldadeCount {
+    font-size: 18px;
+    color: #03a9f4;
+}
+
+.highlight {
+    font-weight: 600;
+    color: #F44336;
+}
+
+.footer {
+    text-align: right;
+}
+
+.fa {
+    font-size: 20px;
+    color: #FFF;
+}
+
+.fa:hover {
+    color: #FFFFFF;
+}
+
+.main {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.btn-primary {
+    background-color: #F44336;
+    border-color: #F44336;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:active:hover {
+    background-color: #B71C1C;
+    border-color: #B71C1C;
+}
+
+.btn {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border: none;
+    border-radius: 2px;
+    line-height: 54px;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    transition: all .3s ease-out;
+    margin-right: 8px;
+}
+
+.card {
+    position: relative;
+    margin: 0.5rem 0 1rem 0;
+    background-color: #424242;
+    transition: box-shadow .25s;
+    border-radius: 2px;
+}
+
+.card-stats {
+    background: #C62828;
+    color: #FFFFFF;
+}
+
+.card-content {
+    padding: 20px 0;
+    border-radius: 0 0 2px 2px;
+}
+
+.card-footer {
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    padding: 20px 0;
+}
+
+.card-footer .fa {
+    color: #03a9f4;
+}
+
+.card-content h4 {
+    font-size: 52px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+}
+
+.card-stats h5 {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.card-share {
+    background: #03a9f4;
+}
+
+.card-share .fa {
+    font-size: 80px;
+}
+
+.z-depth-1 {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.z-depth-2 {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+a {
+    text-transform: uppercase;
+    color: #03a9f4;
+    padding: 0 8px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+a:hover, a:active, a:visited {
+    text-decoration: none;
+    color: #03a9f4;
+}
+
+a.evil {
+    color: #FFF;
+    text-transform: none;
+    /*height: 85px;*/
+    vertical-align: middle;
+    margin-top: 10px;
+    border: 1px solid #03a9f4;
+    display: block;
+    width: 100%;
+    padding: 13px;
+}
+a.evil:hover {
+    border: 1px solid #FFF;
+}
+
+/** EFFECTS **/
+.ease-in-out {
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.navbar-default {
+    background-color: #424242;
+    border-color: #F44336;
+}
+.navbar-default .navbar-brand {
+    color:  rgba(255, 255, 255, 0.75);
+}
+.navbar-default .navbar-toggle {
+    background-color: #C62828;
+    border: 0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFF;
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    color: #FFF;
+}
+
+@media (max-width: 768px) {
+    a {
+        font-size: 22px;
+        padding: 8px;
+    }
+
+    a .fa {
+        font-size: 26px;
+    }
+
+    a .glyphicon {
+        font-size: 22px;
+    }
+
+    .evil-holder {
+        border-top: 1px solid #F44336;
+        padding-top: 15px;
+    }
+
+    .main {
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 46px;
+        margin: 0;
+    }
+
+    h3 {
+        font-size: 35px;
+        margin-bottom: 0;
+        display: block;
+    }
+
+    .maldade {
+        font-size: 35px;
+    }
+
+    h4 {
+        margin-top: 30px;
+    }
+
+    .actions {
+        margin-top: 20px;
+    }
+
+    #maldade-img {
+        margin-top: 10px;
+    }
+
+    .btn {
+        margin-top: 7px;
+    }
+}
