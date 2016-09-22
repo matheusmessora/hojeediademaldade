@@ -208,6 +208,13 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "ir-trabalhar-com-conjuntivite",
             title: "ir trabalhar com conjuntivite",
             img: "http://i1.allaboutvision.com/i/buysmart-2016/eye-drop-into-eye-330x260.jpg",
+        },
+
+        {
+            count: 0,
+            friendly_url: "rezar-para-o-sistema-funcionar",
+            title: "rezar para o sistema funcionar",
+            img: "http://www.brasil247.com/images/3/ad/3adea494d1938a46057802bae893b6cea1a181a2.jpg",
         }
 
     ];
