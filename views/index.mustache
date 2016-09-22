@@ -121,11 +121,11 @@
 			<div class="clearfix"></div>
 
 			<div class="card-footer hidden-sm hidden-xs">
-				<a href="#" onclick="doEvil('{{ data.friendly_url}}');">Fazer maldade</a>
+				<a href="#" class="doEvil" data-evil="{{ data.friendly_url}}">Fazer maldade</a>
 				<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.hojeediademaldade.com.br%2F{{ data.friendly_url }}">compartilhar</a>
 			</div>
 			<div class="card-footer hidden-md hidden-lg">
-				<a href="#" onclick="doEvil('{{ data.friendly_url}}');"><span class="glyphicon glyphicon-fire"
+				<a href="#" class="doEvil" data-evil="{{ data.friendly_url}}"><span class="glyphicon glyphicon-fire"
 				                                                              aria-hidden="true"></span></a>
 				<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.hojeediademaldade.com.br%2F{{ data.friendly_url }}"><i
 						class="fa fa-facebook-square" aria-hidden="true"></i></a>
@@ -220,6 +220,17 @@
 
 	var sumOfAllEvil = {{data.count}};
 	var totalEvil = {{evilsDone}};
+
+	var evilButtons = document.querySelectorAll('.doEvil');
+
+	evilButtons[0].addEventListener('click', prevent, false);
+	evilButtons[1].addEventListener('click', prevent, false);
+
+	function prevent(e){
+		e.preventDefault();
+		var friendlyUrl = this.attributes.getNamedItem('data-evil').value;
+		doEvil(friendlyUrl);
+	}
 
 
 	function doEvil(friendlyUrl) {
