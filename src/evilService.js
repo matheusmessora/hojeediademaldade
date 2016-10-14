@@ -215,6 +215,13 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "rezar-para-o-sistema-funcionar",
             title: "rezar para o sistema funcionar",
             img: "http://www.brasil247.com/images/3/ad/3adea494d1938a46057802bae893b6cea1a181a2.jpg",
+        },
+
+        {
+            count: 0,
+            friendly_url: "pedir-milkshake-de-ovomaltine-no-bobs",
+            title: "pedir milkshake de ovomaltine no Bob's",
+            img: "http://extra.globo.com/incoming/20110124-a0f-5a1/w640h360-PROP/milk-shake-bobs.jpg",
         }
 
     ];
