@@ -208,6 +208,27 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "ir-trabalhar-com-conjuntivite",
             title: "ir trabalhar com conjuntivite",
             img: "http://i1.allaboutvision.com/i/buysmart-2016/eye-drop-into-eye-330x260.jpg",
+        },
+
+        {
+            count: 0,
+            friendly_url: "rezar-para-o-sistema-funcionar",
+            title: "rezar para o sistema funcionar",
+            img: "http://www.brasil247.com/images/3/ad/3adea494d1938a46057802bae893b6cea1a181a2.jpg",
+        },
+
+        {
+            count: 0,
+            friendly_url: "pedir-milkshake-de-ovomaltine-no-bobs",
+            title: "pedir milkshake de ovomaltine no Bob's",
+            img: "http://extra.globo.com/incoming/20110124-a0f-5a1/w640h360-PROP/milk-shake-bobs.jpg",
+        },
+
+        {
+            count: 0,
+            friendly_url: "ganhar-desconto-na-netshoes",
+            title: "ganhar desconto na NETSHOES",
+            img: "https://s3.amazonaws.com/doesuanota.com.br/img/desconto-ns.jpg",
         }
 
     ];
