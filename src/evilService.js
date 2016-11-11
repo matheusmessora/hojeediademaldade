@@ -222,6 +222,13 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "pedir-milkshake-de-ovomaltine-no-bobs",
             title: "pedir milkshake de ovomaltine no Bob's",
             img: "http://extra.globo.com/incoming/20110124-a0f-5a1/w640h360-PROP/milk-shake-bobs.jpg",
+        },
+
+        {
+            count: 0,
+            friendly_url: "ganhar-desconto-na-netshoes",
+            title: "ganhar desconto na NETSHOES",
+            img: "https://s3.amazonaws.com/doesuanota.com.br/img/desconto-ns.jpg",
         }
 
     ];
