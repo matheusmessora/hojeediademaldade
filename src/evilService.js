@@ -229,7 +229,15 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "ganhar-desconto-na-netshoes",
             title: "ganhar desconto na NETSHOES",
             img: "https://s3.amazonaws.com/doesuanota.com.br/img/desconto-ns.jpg",
-        }
+        },
+
+        {
+            count: 0,
+            friendly_url: "fazer-o-urro",
+            title: "fazer o URRO",
+            img: "https://memecrunch.com/meme/4JXHF/faz-o-urro/image.png?w=400&c=1",
+        },
+        
 
     ];
 
