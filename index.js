@@ -63,16 +63,6 @@ app.post('/:friendly_url', function (req, res) {
 });
 
 
-app.get('/flushall', function (req, res) {
-    cache.flushAll(function(err ){
-        if(err) res.sendStatus(500);
-        cache.set("evilsDone", 0, 0, function(err){
-            if(err) res.sendStatus(500);
-            res.sendStatus(201);
-        });
-    });
-})
-
 app.get('/maldades', function(req, res){
     res.render('maldades', {
         evils: evilService.getData
