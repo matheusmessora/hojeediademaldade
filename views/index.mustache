@@ -48,6 +48,16 @@
 </head>
 
 <body>
+<!-- FACEBOOK -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=283144822075980";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -170,6 +180,14 @@
 					<button type="button" class="btn btn-primary btn-lg btn-block">Próxima maldade <span
 							class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
 				</a>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12" style="text-align: center">
+			<div class="white-bg">
+				<div class="fb-comments" data-width="100%" data-href="http://www.hojeediademaldade.com.br" data-numposts="5"></div>
+				<div class="clearfix"></div>
 			</div>
 		</div>
 	</div>

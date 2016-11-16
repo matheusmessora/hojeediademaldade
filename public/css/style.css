@@ -40,6 +40,10 @@ h5 {
     font-size: 18px;
 }
 
+.white-bg {
+    background-color: #FFF;
+}
+
 .maldade {
     font-weight: 800;
     font-size: 50px;
