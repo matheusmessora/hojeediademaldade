@@ -154,13 +154,10 @@
 				</div>
 			</div>
 			<div class="clearfix"></div>
-			<h5><i class="glyphicon glyphicon-thumbs-up maldadeCount"></i> <span id="sumOfAllEvil" class="maldadeCount">{{ data.count }}</span></h5>
 
 			<div class="card-footer hidden-sm hidden-xs">
 				<div class="col-md-6">
-					<button type="button" class="btn btn-primary btn-lg" onclick="doEvil('{{ data.friendly_url}}');">Curtir
-						<span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
-					</button>
+					<div class="fb-like" data-href="https://hojeediademaldade.com.br" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 				</div>
 				<div class="col-md-6 text-right">
 					<a onclick="nextEvil()" href="/{{newEvil.friendly_url}}">
