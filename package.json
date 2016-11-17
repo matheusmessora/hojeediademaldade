@@ -18,9 +18,10 @@
   "homepage": "https://github.com/matheusmessora/hojeediademaldade#readme",
   "dependencies": {
     "bootstrap": "^3.3.6",
+    "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
-    "mustache": "^2.2.1",
     "memcached": "2.2.2",
+    "mustache": "^2.2.1",
     "mustache-express": "^1.2.2"
   }
 }

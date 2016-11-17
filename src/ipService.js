@@ -5,7 +5,7 @@ module.exports = function IPService(dependencies) {
     this.cache = dependencies.cache;
 
     var countIPevil = function (ip, callback) {
-        var cacheKey = "ip-" + ip;
+        var cacheKey = "evil-ip-" + ip;
 
         cache.get(cacheKey, function(err, data){
             if (err) {
@@ -18,19 +18,17 @@ module.exports = function IPService(dependencies) {
                 cache.incr(cacheKey, 1, function(err){
                     if(err) console.log(err);
                 });
-                console.log("[IP-SERVICE] INCR countIP", cacheKey, data);
+                console.log("[IP-SERVICE] [EVIL] INCR countIP", cacheKey, data);
             }else {
                 data = 1;
                 var ONE_DAY = 86400
                 cache.set(cacheKey, data, ONE_DAY, function(err){
                     if(err) console.log(err);
                 });
-                console.log("[IP-SERVICE] SET countIP", cacheKey, data);
+                console.log("[IP-SERVICE] [EVIL] SET countIP", cacheKey, data);
             }
             callback(null, data)
         })
-
-
     };
 
     return {

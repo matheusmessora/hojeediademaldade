@@ -28,7 +28,7 @@ module.exports = function EvilService(dependencies) {
             count: 9,
             friendly_url: "abrir-o-ie",
             title: "abrir o IE",
-            img: "http://www.saveie6.com/_img/img_aboutie6.gif",
+            img: "http://vignette3.wikia.nocookie.net/logopedia/images/d/d0/IE6.png/revision/latest?cb=20121221232621",
         },
         {
             count: 52,
@@ -53,12 +53,6 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "engordar-para-valer",
             title: "engordar para valer",
             img: "https://i.ytimg.com/vi/H52kepS9tO4/hqdefault.jpg",
-        },
-        {
-            count: 2,
-            friendly_url: "peidar-na-fila-do-banco-e-sair-correndo",
-            title: "peidar na fila do banco e sair correndo",
-            img: "http://www.polemicaparaiba.com.br/wp-content/uploads/2015/09/fila-de-banco.jpg",
         },
         {
             count: 3,
@@ -102,7 +96,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "visualizar-e-nao-responder",
             title: "visualizar e não responder",
-            img: "http://lounge.obviousmag.org/monica_montone/assets_c/2015/10/visualizar%20e%20n%C3%A3o%20responder%20(1)-thumb-800x600-125118.png",
+            img: "http://brcdn02.mundotkm.com/2014/11/whatsapp.jpg",
         },
 
         {
@@ -229,6 +223,13 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "ganhar-desconto-na-netshoes",
             title: "ganhar desconto na NETSHOES",
             img: "https://s3.amazonaws.com/doesuanota.com.br/img/desconto-ns.jpg",
+        },
+
+        {
+            count: 0,
+            friendly_url: "ganhar-desconto-na-magazine-luiza",
+            title: "ganhar desconto na Magazine Luiza",
+            adpage: "magazine"
         },
 
         {

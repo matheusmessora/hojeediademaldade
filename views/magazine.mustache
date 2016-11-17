@@ -26,6 +26,15 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/css/style.css">
 
+	<!-- Twitter Card data -->
+	<!--<meta name="twitter:card" content="summary">-->
+	<!--<meta name="twitter:site" content="@publisher_handle">-->
+	<!--<meta name="twitter:title" content="Page Title">-->
+	<!--<meta name="twitter:description" content="Page description less than 200 characters">-->
+	<!--<meta name="twitter:creator" content="@author_handle">-->
+	<!--&lt;!&ndash; Twitter Summary card images must be at least 120x120px &ndash;&gt;-->
+	<!--<meta name="twitter:image" content="http://www.example.com/image.jpg">-->
+
 	<!-- Open Graph data -->
 	<meta property="og:title" content="Hoje é dia de maldade!"/>
 	<meta property="og:type" content="article"/>
@@ -34,19 +43,11 @@
 	<meta property="og:description" content="Hoje é dia de maldade, hoje é dia de {{data.title}}"/>
 	<meta property="og:site_name" content="Hoje é dia de maldade!"/>
 
+
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body>
-<!-- FACEBOOK -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=283144822075980";
-	fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
@@ -113,28 +114,13 @@
 
 	<div class="row hidden-sm hidden-xs">
 		<div class="col-md-12" style="text-align: center">
-			<!-- GOOGLE - BEGIN -->
-			<!-- leaderboard -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:728px;height:90px"
-			     data-ad-client="ca-pub-6833277136146980"
-			     data-ad-slot="7537769753"></ins>
-			<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
-			<!-- GOOGLE - END -->
+			<div class="magazine leaderboard" data-mvc-banner="leaderboard"></div>
 		</div>
 	</div>
 
 	<div class="row hidden-md hidden-lg">
 		<div class="col-xs-12" style="text-align: center">
-			<!-- GOOGLE - BEGIN -->
-			<!-- mobile -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:320px;height:100px"
-			     data-ad-client="ca-pub-6833277136146980"
-			     data-ad-slot="9057555357"></ins>
-			<!-- GOOGLE - END -->
+			<div class="magazine rectangle" data-mvc-banner="rectangle"></div>
 		</div>
 	</div>
 
@@ -146,7 +132,7 @@
 
 				</div>
 				<div class="col-md-4">
-					<img id="maldade-img" src="{{ data.img }}" width="100%" height="100%">
+					<div class="magazine medium-rectangle" data-mvc-banner="medium-rectangle"></div>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -170,14 +156,6 @@
 					<button type="button" class="btn btn-primary btn-lg btn-block">Próxima<span
 							class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
 				</a>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12" style="text-align: center">
-			<div class="white-bg">
-				<div class="fb-comments" data-width="100%" data-href="http://www.hojeediademaldade.com.br" data-numposts="5"></div>
-				<div class="clearfix"></div>
 			</div>
 		</div>
 	</div>
@@ -213,6 +191,7 @@
 
 	var sumOfAllEvil = {{data.count}};
 	var totalEvil = {{evilsDone}};
+
 
 	function nextEvil(){
 		var hits = Cookies.get('hits');
@@ -251,8 +230,7 @@
 
 </script>
 
-<script>
-	(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<!-- MAGAZINE LUIZA -->
+<script type="text/javascript"> (function(storeName) { var b = document.createElement('script'); b.type = 'text/javascript'; b.async = true; b.src = 'https://www.magazinevoce.com.br/js/banner.js?store='+ storeName; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(b, s); })('agoraagora'); </script>
 </body>
 </html>

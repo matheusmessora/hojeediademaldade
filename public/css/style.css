@@ -80,7 +80,7 @@ h5 {
 
 .main {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .actions {
@@ -218,6 +218,19 @@ a.evil:hover {
 }
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
     color: #FFF;
+}
+
+
+
+/** ---- ADS --- **/
+.magazine.leaderboard {
+    background-color: #FFF; width:768px; height: 90px; margin:auto;
+}
+.magazine.rectangle {
+    background-color: #FFF; width:160px; height: 150px; margin:auto;
+}
+.magazine.medium-rectangle {
+    background-color: #FFF; width:300px; height: 250px;
 }
 
 @media (max-width: 768px) {
