@@ -90,6 +90,10 @@ app.get('/maldades', function(req, res){
     });
 })
 
+app.get('/privacidade', function(req, res){
+    res.render('privacidade', {});
+})
+
 
 app.get('/:friendly_url', function (req, res) {
     let totalEvil = evilService.totalEvils();
