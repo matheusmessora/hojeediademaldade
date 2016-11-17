@@ -29,6 +29,9 @@ var evilService = require('./src/evilService')({
     random: random,
     cache: memcached
 });
+var ipService = require('./src/ipService')({
+    cache: memcached
+});
 
 
 app.get('/', function (req, res) {
@@ -51,15 +54,26 @@ app.get('/', function (req, res) {
 
 app.post('/:friendly_url', function (req, res) {
 
-    evilService.doEvil(req.params.friendly_url, function (err) {
-        if (err) {
+    ipService.countIPevil(req.connection.remoteAddress, function(err, hits){
+        if(err) {
             console.error(err);
             res.sendStatus(500)
         }else {
-            res.sendStatus(200)
+            if(hits < 300) {
+                evilService.doEvil(req.params.friendly_url, function (err) {
+                    if (err) {
+                        console.error(err);
+                        res.sendStatus(500)
+                    }else {
+                        res.sendStatus(200)
+                    }
+                });
+            }else {
+                console.log("Too many hits.", req.connection.remoteAddress, hits)
+            }
         }
-    });
 
+    })
 });
 
 

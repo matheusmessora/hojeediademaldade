@@ -251,13 +251,12 @@ module.exports = function EvilService(dependencies) {
 
         findByFriendlyURL(friendlyUrl, function(err, evil){
             evil.count = evil.count + 1;
-            callback(err, evil)
-            // cacheEvil(err, evil, function(err, evil){
-            //
-            //     increaseEvilsDone(err, function(err){
-            //         callback(err, evil)
-            //     })
-            // });
+            cacheEvil(err, evil, function(err, evil){
+
+                increaseEvilsDone(err, function(err){
+                    callback(err, evil)
+                })
+            });
         });
 
 
