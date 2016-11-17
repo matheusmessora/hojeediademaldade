@@ -10,7 +10,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "instalar-baidu",
             title: "instalar o BAIDU!",
-            img: "http://antivirusbaixar.com/wp-content/uploads/2015/10/baixar-baidu.png",
+            img: "http://antivirus.baidu.com/r/image/2014-08-25/22a52239c422616442d2c35540ff1361.jpg",
         },
         {
             count: 87,
