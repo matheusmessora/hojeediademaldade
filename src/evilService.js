@@ -234,6 +234,20 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
+            friendly_url: "comprar-um-novo-smartphone",
+            title: "comprar um novo smartphone",
+            adpage: "magazine"
+        },
+
+        // {
+        //     count: 0,
+        //     friendly_url: "comprar-um-dominio-no-uolhost",
+        //     title: "ganhar desconto na Magazine Luiza",
+        //     adpage: "magazine"
+        // },
+
+        {
+            count: 0,
             friendly_url: "fazer-o-urro",
             title: "fazer o URRO",
             img: "https://memecrunch.com/meme/4JXHF/faz-o-urro/image.png?w=400&c=1",
@@ -252,11 +266,21 @@ module.exports = function EvilService(dependencies) {
             title: "fazer a chapinha e tomar chuva",
             img: "https://ifwewerefamous.files.wordpress.com/2011/07/258430.jpg",
         }
-
-
-
-
     ];
+
+    var ads = [];
+
+
+    loadAds();
+
+    function loadAds() {
+        for (var i = 0; i < data.length; i++) {
+            if(data[i].adpage){
+                ads.push(data[i]);
+            }
+        }
+    }
+
 
     /** THIS NEED TO BE FIXED **/
     function newEvil(err, callback) {
@@ -300,6 +324,11 @@ module.exports = function EvilService(dependencies) {
     var totalEvils = function () {
         return data.length;
     };
+
+    var getAd = function(callback){
+        var randomInt = random.randomInt(0,ads.length);
+        findByFriendlyURL(ads[randomInt].friendly_url, callback)
+    }
 
     var findByFriendlyURL = function(friendlyUrl, callback) {
         console.log("[DEBUG] findByFriendlyURL", friendlyUrl)
@@ -367,6 +396,7 @@ module.exports = function EvilService(dependencies) {
         totalEvils: totalEvils,
         newEvil: newEvil,
         doEvil: doEvil,
-        findByFriendlyURL: findByFriendlyURL
+        findByFriendlyURL: findByFriendlyURL,
+        getAd: getAd
     }
 };

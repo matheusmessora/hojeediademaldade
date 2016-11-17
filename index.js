@@ -106,7 +106,7 @@ app.get('/:friendly_url', function (req, res) {
             var hits = req.cookies.hits;
             console.log("[COOKIES] hits", hits)
             if(hits && hits % 3 === 0){
-                evilService.findByFriendlyURL("ganhar-desconto-na-magazine-luiza", function (err, nextEvil) {
+                evilService.getAd(function (err, nextEvil) {
                     getData(err, evil, nextEvil);
                 });
             }else {

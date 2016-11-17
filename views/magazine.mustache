@@ -139,14 +139,18 @@
 			<h5><i class="glyphicon glyphicon-thumbs-up maldadeCount"></i> <span id="sumOfAllEvil" class="maldadeCount">{{ data.count }}</span></h5>
 
 			<div class="card-footer hidden-sm hidden-xs">
-				<button type="button" class="btn btn-primary btn-lg" onclick="doEvil('{{ data.friendly_url}}');">Curtir
-					<span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
-				</button>
-				<a onclick="nextEvil()" href="/{{newEvil.friendly_url}}">
-					<button type="button" class="btn btn-primary btn-lg">Próxima<span
-							class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
-				</a>
-				<!--<a class="btn btn-sm" href="#" onclick="doEvil('{{ data.friendly_url}}');">Curtir</a>-->
+				<div class="col-md-6">
+					<button type="button" class="btn btn-primary btn-lg" onclick="doEvil('{{ data.friendly_url}}');">Curtir
+						<span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
+					</button>
+				</div>
+				<div class="col-md-6 text-right">
+					<a onclick="nextEvil()" href="/{{newEvil.friendly_url}}">
+						<button type="button" class="btn btn-primary btn-lg">Próxima<span
+								class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+					</a>
+				</div>
+				<div class="clearfix"></div>
 			</div>
 			<div class="card-footer hidden-md hidden-lg" style="text-align: center">
 				<button type="button" class="btn btn-primary btn-lg btn-block" onclick="doEvil('{{ data.friendly_url}}');">Curtir
