@@ -237,8 +237,15 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "fazer-o-urro",
             title: "fazer o URRO",
             img: "https://memecrunch.com/meme/4JXHF/faz-o-urro/image.png?w=400&c=1",
+        },
+
+        {
+            count: 0,
+            friendly_url: "jogar-mu-com-os-amigos",
+            title: "jogar MU com os amigos",
+            img: "http://www.unithost.com.br/img/servicos/62867473.png",
         }
-        
+
 
     ];
 
