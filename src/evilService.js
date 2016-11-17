@@ -244,7 +244,16 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "jogar-mu-com-os-amigos",
             title: "jogar MU com os amigos",
             img: "http://www.unithost.com.br/img/servicos/62867473.png",
+        },
+
+        {
+            count: 0,
+            friendly_url: "fazer-chapinha-e-tomar-chuva",
+            title: "fazer a chapinha e tomar chuva",
+            img: "https://ifwewerefamous.files.wordpress.com/2011/07/258430.jpg",
         }
+
+
 
 
     ];
