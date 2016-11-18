@@ -273,6 +273,13 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "esquecer-facebook-aberto",
             title: "esquecer o facebook aberto",
             img: "https://s3.amazonaws.com/doesuanota.com.br/img/meme-garotinho-1.png",
+        },
+
+        {
+            count: 0,
+            friendly_url: "tomar-cuidado-com-o-vao-entre-o-trem-e-a-plataforma",
+            title: "tomar cuidado com o vão entre o trem e a plataforma",
+            img: "https://reticenciajornalistica.files.wordpress.com/2013/02/linha-7-rubi-abismo-entre-o-trem-e-a-plataforma1.jpg",
         }
         
         

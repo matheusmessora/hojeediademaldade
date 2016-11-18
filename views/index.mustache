@@ -29,7 +29,7 @@
 	<!-- Open Graph data -->
 	<meta property="og:title" content="Hoje é dia de maldade!"/>
 	<meta property="og:type" content="article"/>
-	<meta property="og:url" content="http://www.hojeediademaldade.com.br/{{data.title}}"/>
+	<meta property="og:url" content="http://www.hojeediademaldade.com.br/{{data.friendly_url}}"/>
 	<meta property="og:image" content="{{data.img}}"/>
 	<meta property="og:description" content="Hoje é dia de maldade, hoje é dia de {{data.title}}"/>
 	<meta property="og:site_name" content="Hoje é dia de maldade!"/>
@@ -157,7 +157,7 @@
 
 			<div class="card-footer hidden-sm hidden-xs">
 				<div class="col-md-6">
-					<div class="fb-like" data-href="https://hojeediademaldade.com.br" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+					<div class="fb-like" data-href="http://www.hojeediademaldade.com.br/{{data.friendly_url}}" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 				</div>
 				<div class="col-md-6 text-right">
 					<a onclick="nextEvil()" href="/{{newEvil.friendly_url}}">
@@ -168,7 +168,7 @@
 				<div class="clearfix"></div>
 			</div>
 			<div class="card-footer hidden-md hidden-lg" style="text-align: center">
-				<div class="fb-like" data-href="https://hojeediademaldade.com.br" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+				<div class="fb-like" data-href="http://www.hojeediademaldade.com.br/{{data.friendly_url}}" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 				<a onclick="nextEvil()" href="/{{newEvil.friendly_url}}">
 					<button type="button" class="btn btn-primary btn-lg btn-block">Próxima<span
 							class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
@@ -179,7 +179,7 @@
 	<div class="row">
 		<div class="col-md-12" style="text-align: center">
 			<div class="white-bg">
-				<div class="fb-comments" data-width="100%" data-href="http://www.hojeediademaldade.com.br" data-numposts="5"></div>
+				<div class="fb-comments" data-width="100%" data-href="http://www.hojeediademaldade.com.br/{{data.friendly_url}}" data-numposts="5"></div>
 				<div class="clearfix"></div>
 			</div>
 		</div>
