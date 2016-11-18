@@ -265,7 +265,17 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "fazer-chapinha-e-tomar-chuva",
             title: "fazer a chapinha e tomar chuva",
             img: "https://ifwewerefamous.files.wordpress.com/2011/07/258430.jpg",
+        },
+
+        {
+            count: 0,
+            friendly_url: "esquecer-facebook-aberto",
+            title: "esquecer o facebook aberto",
+            img: "https://s3.amazonaws.com/doesuanota.com.br/img/meme-garotinho-1.png",
         }
+        
+        
+        
     ];
 
     var ads = [];
