@@ -321,24 +321,6 @@ module.exports = function EvilService(dependencies) {
 
     };
 
-    function evilsDone(err, callback) {
-
-        cache.get("evilsDone", function(err, data){
-            if (err) {
-                return callback(err, null);
-            }
-
-            var evilsDone = 0;
-            if(data){
-                evilsDone = data;
-            }else {
-                cache.set("evilsDone", 0, 0, function(err){});
-            }
-            console.log("[DEBUG] evilsDone", evilsDone)
-            callback(null, evilsDone)
-        })
-    }
-
     var totalEvils = function () {
         return data.length;
     };
@@ -349,7 +331,6 @@ module.exports = function EvilService(dependencies) {
     }
 
     var findByFriendlyURL = function(friendlyUrl, callback) {
-        console.log("[DEBUG] findByFriendlyURL", friendlyUrl)
         var evil
         var data = getData();
         for (var i = 0; i < data.length; i++) {
@@ -398,22 +379,10 @@ module.exports = function EvilService(dependencies) {
         });
     };
 
-
-    function increaseEvilsDone(err, callback){
-        cache.incr('evilsDone', 1, function (err) {
-            if(err){
-                console.error(err)
-            }
-            callback(err);
-        });
-    }
-
     return {
         getData: getData,
-        evilsDone: evilsDone,
         totalEvils: totalEvils,
         newEvil: newEvil,
-        doEvil: doEvil,
         findByFriendlyURL: findByFriendlyURL,
         getAd: getAd
     }

@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-	<title>Hoje é dia de Maldade</title>
+	<title>Hoje é dia de Maldade - hoje é dia de {{data.title}}</title>
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,8 @@
 	<meta name="google-site-verification" content="gBgQVpCgr9ccXMhoTzKrNJPcexBHd5_kJWQouZOWa2M"/>
 
 	<!-- ICON -->
-	<link rel="icon" type="image/png" href="http://emojipedia-us.s3.amazonaws.com/cache/6b/99/6b9974b5e4aa6ed41ffc18fcf8e832ae.png" />
+	<link rel="icon" type="image/png"
+	      href="http://emojipedia-us.s3.amazonaws.com/cache/6b/99/6b9974b5e4aa6ed41ffc18fcf8e832ae.png"/>
 
 	<!-- Font -->
 	<link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
@@ -47,23 +48,16 @@
 <body>
 <!-- FACEBOOK -->
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=283144822075980";
-	fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 			<!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
-				<!--<span class="sr-only">Toggle navigation</span>-->
-				<!--<span class="icon-bar"></span>-->
-				<!--<span class="icon-bar"></span>-->
-				<!--<span class="icon-bar"></span>-->
+			<!--<span class="sr-only">Toggle navigation</span>-->
+			<!--<span class="icon-bar"></span>-->
+			<!--<span class="icon-bar"></span>-->
+			<!--<span class="icon-bar"></span>-->
 			<!--</button>-->
 			<a class="navbar-brand" href="/">Home</a>
 			<a class="navbar-brand" href="/maldades">Maldades</a>
@@ -72,12 +66,12 @@
 	</div><!-- /.container-fluid -->
 </nav>
 <!--<nav class="navbar navbar-default navbar-fixed-top">-->
-	<!--<div class="container">-->
-		<!--<div class="navbar-header">-->
-			<!--<a class="navbar-brand" href="/">Home</a>-->
-			<!--<a class="navbar-brand" href="/maldades">Maldades</a>-->
-		<!--</div>-->
-	<!--</div>-->
+<!--<div class="container">-->
+<!--<div class="navbar-header">-->
+<!--<a class="navbar-brand" href="/">Home</a>-->
+<!--<a class="navbar-brand" href="/maldades">Maldades</a>-->
+<!--</div>-->
+<!--</div>-->
 <!--</nav>-->
 
 <div class="container">
@@ -119,7 +113,7 @@
 	</div>
 
 	<div class="row hidden-sm hidden-xs">
-		<div class="col-md-12" style="text-align: center">
+		<div class="col-md-8" style="text-align: center">
 			<!-- GOOGLE - BEGIN -->
 			<!-- leaderboard -->
 			<ins class="adsbygoogle"
@@ -127,6 +121,20 @@
 			     data-ad-client="ca-pub-6833277136146980"
 			     data-ad-slot="7537769753"></ins>
 			<!-- GOOGLE - END -->
+		</div>
+		<div id="sugestion-holder" class="col-md-4" style="display: none;">
+			<div class="row card z-depth-2">
+				<div class="card-content">
+					<div class="col-md-12 text-center">
+						<h5>Sugerir maldade</h5>
+						<button id="fb-login-btn" onclick="fb_login();" type="button" class="btn btn-facebook">Login com Facebook</button>
+						<input type="text" class="form-control" id="sugestion" style="display: none"><br />
+						<button id="sugestion-btn" onclick="saveSugestion();" type="button" class="btn btn-sm btn-facebook" style="display: none">Sugerir</button>
+						<span id="thankyou" style="display: none;">Obrigado!</span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -146,7 +154,8 @@
 		<div class="col-md-12">
 			<div class="card-content row">
 				<div class="col-md-8">
-					<h3>Hoje é dia de </h3><span class="maldade">{{ data.title }}</span>
+					<h3>Hoje é dia de </h3>
+					<span class="maldade">{{ data.title }}</span>
 
 				</div>
 				<div class="col-md-4">
@@ -157,7 +166,9 @@
 
 			<div class="card-footer hidden-sm hidden-xs">
 				<div class="col-md-6">
-					<div class="fb-like" data-href="http://www.hojeediademaldade.com.br/{{data.friendly_url}}" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+					<div class="fb-like" data-href="http://www.hojeediademaldade.com.br/{{data.friendly_url}}"
+					     data-layout="button_count" data-action="like" data-size="large" data-show-faces="true"
+					     data-share="true"></div>
 				</div>
 				<div class="col-md-6 text-right">
 					<a onclick="nextEvil()" href="/{{newEvil.friendly_url}}">
@@ -168,7 +179,9 @@
 				<div class="clearfix"></div>
 			</div>
 			<div class="card-footer hidden-md hidden-lg" style="text-align: center">
-				<div class="fb-like" data-href="http://www.hojeediademaldade.com.br/{{data.friendly_url}}" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+				<div class="fb-like" data-href="http://www.hojeediademaldade.com.br/{{data.friendly_url}}"
+				     data-layout="button_count" data-action="like" data-size="large" data-show-faces="true"
+				     data-share="true"></div>
 				<a onclick="nextEvil()" href="/{{newEvil.friendly_url}}">
 					<button type="button" class="btn btn-primary btn-lg btn-block">Próxima<span
 							class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
@@ -179,7 +192,8 @@
 	<div class="row">
 		<div class="col-md-12" style="text-align: center">
 			<div class="white-bg">
-				<div class="fb-comments" data-width="100%" data-href="http://www.hojeediademaldade.com.br/{{data.friendly_url}}" data-numposts="5"></div>
+				<div class="fb-comments" data-width="100%"
+				     data-href="http://www.hojeediademaldade.com.br/{{data.friendly_url}}" data-numposts="5"></div>
 				<div class="clearfix"></div>
 			</div>
 		</div>
@@ -200,6 +214,87 @@
 </div> <!-- /container -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.3/js.cookie.min.js"></script>
+
+<script>(function (d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s);
+	js.id = id;
+	js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=283144822075980";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+window.fbAsyncInit = function () {
+	console.log("[DEBUG] Facebook fbAsyncInit")
+	FB.init({
+		appId: '283144822075980', // Set YOUR APP ID
+		channelUrl: 'http://hayageek.com/examples/oauth/facebook/oauth-javascript/channel.html', // Channel File
+		status: true, // check login status
+		cookie: true, // enable cookies to allow the server to access the session
+		xfbml: true,  // parse XFBML
+		version: 'v2.4',
+		oauth: true
+	});
+
+	FB.Event.subscribe('auth.authResponseChange', function (response) {
+		if (response.status === 'connected') {
+			console.log("<br>Connected to Facebook");
+			//SUCCESS
+			document.getElementById('fb-login-btn').style.display = 'none';
+			document.getElementById('sugestion-btn').style.display = 'inline-block';
+			document.getElementById('sugestion').style.display = 'block';
+			document.getElementById('thankyou').style.display = 'none';
+
+			console.log(response)
+			FB.api('/me', {
+					fields: 'name,email,birthday,gender'
+				},
+				function (response) {
+					saveFb(response)
+				}
+			);
+
+		}
+		else if (response.status === 'not_authorized') {
+			document.getElementById('fb-login-btn').style.display = 'inline-block';
+			document.getElementById('sugestion-btn').style.display = 'none';
+			document.getElementById('sugestion').style.display = 'none';
+			document.getElementById('thankyou').style.display = 'none';
+
+			console.log("Failed to Connect");
+
+			//FAILED
+		} else {
+			document.getElementById('fb-login-btn').style.display = 'inline-block';
+			document.getElementById('sugestion-btn').style.display = 'none';
+			document.getElementById('sugestion').style.display = 'none';
+			document.getElementById('thankyou').style.display = 'none';
+
+			console.log("Logged Out");
+			//UNKNOWN ERROR
+		}
+	});
+
+};
+
+
+function fb_login() {
+	FB.login(function(response) {
+
+		if (response.authResponse) {
+			access_token = response.authResponse.accessToken; //get access token
+			user_id = response.authResponse.userID; //get FB UID
+		} else {
+			//user hit cancel button
+			console.log('User cancelled login or did not fully authorize.');
+
+		}
+	}, {
+		scope: 'public_profile,email'
+	});
+}
+</script>
+
 <script>
 
 	(function (i, s, o, g, r, a, m) {
@@ -217,42 +312,66 @@
 	ga('create', 'UA-47755345-6', 'auto');
 	ga('send', 'pageview');
 
-	var sumOfAllEvil = {{data.count}};
-	var totalEvil = {{evilsDone}};
+	var userID = 0;
 
-	function nextEvil(){
+	var social = getParameterByName('social');
+
+	if(social){
+		document.getElementById('sugestion-holder').style.display = 'block';
+	}
+
+	function nextEvil() {
 		var hits = Cookies.get('hits');
 
-		if(hits){
+		if (hits) {
 			hits++;
-		}else {
+		} else {
 			hits = 0;
 		}
 		Cookies.set('hits', hits);
 	}
 
-	function doEvil(friendlyUrl) {
-		console.log("POST " + friendlyUrl);
+	function getParameterByName(name, url) {
+		if (!url) {
+			url = window.location.href;
+		}
+		name = name.replace(/[\[\]]/g, "\\$&");
+		var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+				results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, " "));
+	}
+
+	function saveFb(fb_response) {
+		if(social){
+			console.log("POST facebook", fb_response);
+
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "/social", true);
+			xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+			xhttp.send(JSON.stringify(fb_response));
+
+			userID = fb_response.id;
+		}
+
+	}
+
+	function saveSugestion() {
+		var sugestion = document.getElementById('sugestion').value
+		console.log("POST sugestion", sugestion);
 
 		var xhttp = new XMLHttpRequest();
-		xhttp.open("POST", "/" + friendlyUrl, true);
-		xhttp.send();
+		xhttp.open("POST", "/sugestion", true);
+		xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+		xhttp.send(JSON.stringify({
+			id: userID,
+			sugestion: sugestion
+		}));
 
-		sumOfAllEvil++;
-		totalEvil++;
-
-		var sumOfAllEvilDiv = document.getElementById("sumOfAllEvil");
-		var evilsDoneDIv = document.getElementById("evilsDone");
-		sumOfAllEvilDiv.style.opacity = 0;
-		evilsDoneDIv.style.opacity = 0;
-
-		setTimeout(function () {
-			sumOfAllEvilDiv.innerHTML = sumOfAllEvil;
-			sumOfAllEvilDiv.style.opacity = 1;
-
-			evilsDoneDIv.innerHTML = totalEvil;
-			evilsDoneDIv.style.opacity = 1;
-		}, 500);
+		document.getElementById('sugestion-btn').style.display = 'none';
+		document.getElementById('sugestion').style.display = 'none';
+		document.getElementById('thankyou').style.display = 'inline-block';
 	}
 
 </script>

@@ -6,6 +6,7 @@ var app = express();
 
 // midlewares
 var cookieParser = require('cookie-parser')
+var bodyParser = require('body-parser')
 var path = require('path');
 var mustacheExpress = require('mustache-express');
 
@@ -27,6 +28,9 @@ app.set('views', __dirname + '/views');
 app.set('port', (process.env.PORT || 3001));
 app.use(express.static('public'));
 
+// enable body JSON
+app.use(bodyParser());
+
 // enable cookies parsing
 app.use(cookieParser())
 
@@ -36,7 +40,10 @@ var evilService = require('./src/evilService')({
     random: random,
     cache: memcached
 });
-var ipService = require('./src/ipService')({
+var fbService = require('./src/fbService')({
+    cache: memcached
+});
+var sugestionService = require('./src/sugestionService')({
     cache: memcached
 });
 
@@ -46,40 +53,62 @@ app.get('/', function (req, res) {
 
     evilService.newEvil(null, function(err, evil){
         evilService.newEvil(err, function(err, nextEvil){
-            evilService.evilsDone(err, function(err, evilsDone) {
-                res.render('index', {
-                    data: evil,
-                    online: 1,
-                    newEvil: nextEvil,
-                    totalEvil: totalEvil,
-                    evilsDone: evilsDone
-                });
+            res.render('index', {
+                data: evil,
+                online: 1,
+                newEvil: nextEvil,
+                totalEvil: totalEvil,
+                evilsDone: 0
             });
         })
     })
 });
 
-app.post('/:friendly_url', function (req, res) {
+app.post('/social', function (req, res) {
 
-    ipService.countIPevil(req.connection.remoteAddress, function(err, hits){
+    fbService.save(req.body, function(err){
         if(err) {
             console.error(err);
             res.sendStatus(500)
         }else {
-            if(hits < 300) {
-                evilService.doEvil(req.params.friendly_url, function (err) {
-                    if (err) {
-                        console.error(err);
-                        res.sendStatus(500)
-                    }else {
-                        res.sendStatus(200)
-                    }
-                });
-            }else {
-                console.log("Too many hits.", req.connection.remoteAddress, hits)
-            }
+            res.sendStatus(200)
         }
+    })
+});
 
+app.post('/sugestion', function (req, res) {
+
+    sugestionService.save(req.body, function(err){
+        if(err) {
+            console.error(err);
+            res.sendStatus(500)
+        }else {
+            res.sendStatus(200)
+        }
+    })
+});
+
+app.get('/sugestion/:id', function (req, res) {
+
+    sugestionService.getByID(req.params.id, function(err, data){
+        if(err) {
+            console.error(err);
+            res.sendStatus(500)
+        }else {
+            res.json(data)
+        }
+    })
+});
+
+app.get('/social/:id', function (req, res) {
+
+    fbService.getByID(req.params.id, function(err, data){
+        if(err) {
+            console.error(err);
+            res.sendStatus(500)
+        }else {
+            res.json(data)
+        }
     })
 });
 
@@ -118,20 +147,18 @@ app.get('/:friendly_url', function (req, res) {
     });
 
     function getData(err, evil, nextEvil){
-        evilService.evilsDone(err, function(err, evilsDone) {
-            var page = 'index';
+        var page = 'index';
 
-            if(evil.adpage){
-                page = evil.adpage;
-            }
+        if(evil.adpage){
+            page = evil.adpage;
+        }
 
-            res.render(page, {
-                data: evil,
-                online: 1,
-                newEvil: nextEvil,
-                totalEvil: totalEvil,
-                evilsDone: evilsDone
-            });
+        res.render(page, {
+            data: evil,
+            online: 1,
+            newEvil: nextEvil,
+            totalEvil: totalEvil,
+            evilsDone: 0
         });
     }
 });
