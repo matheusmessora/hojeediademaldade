@@ -35,6 +35,11 @@
 	<meta property="og:description" content="Hoje é dia de maldade, hoje é dia de {{data.title}}"/>
 	<meta property="og:site_name" content="Hoje é dia de maldade!"/>
 
+	<script
+			src="https://code.jquery.com/jquery-3.1.1.min.js"
+			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			crossorigin="anonymous"></script>
+
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 	<script>
@@ -112,41 +117,37 @@
 		</div>
 	</div>
 
-	<div class="row hidden-sm hidden-xs">
-		<div class="col-md-8" style="text-align: center">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" style="text-align: center">
 			<!-- GOOGLE - BEGIN -->
 			<!-- leaderboard -->
-			<ins class="adsbygoogle"
+			<ins class="adsbygoogle hidden-sm hidden-xs"
 			     style="display:inline-block;width:728px;height:90px"
 			     data-ad-client="ca-pub-6833277136146980"
 			     data-ad-slot="7537769753"></ins>
 			<!-- GOOGLE - END -->
+
+			<!-- GOOGLE - BEGIN -->
+			<!-- mobile -->
+			<ins class="adsbygoogle hidden-md hidden-lg"
+			     style="display:inline-block;width:320px;height:100px"
+			     data-ad-client="ca-pub-6833277136146980"
+			     data-ad-slot="9057555357"></ins>
+			<!-- GOOGLE - END -->
 		</div>
-		<div id="sugestion-holder" class="col-md-4" style="display: none;">
+		<div id="sugestion-holder" class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="display: none;">
 			<div class="row card z-depth-2">
 				<div class="card-content">
 					<div class="col-md-12 text-center">
 						<h5>Sugerir maldade</h5>
-						<button id="fb-login-btn" onclick="fb_login();" type="button" class="btn btn-facebook">Login com Facebook</button>
-						<input type="text" class="form-control" id="sugestion" style="display: none"><br />
-						<button id="sugestion-btn" onclick="saveSugestion();" type="button" class="btn btn-sm btn-facebook" style="display: none">Sugerir</button>
+						<button id="fb-login-btn" onclick="fb_login();" type="button" class="btn btn-facebook facebook-blocks">Login com Facebook</button>
+						<input type="text" class="form-control sugestion-blocks" id="sugestion" style="display: none"><br />
+						<button onclick="saveSugestion();" type="button" class="btn btn-sm btn-facebook sugestion-blocks" style="display: none">Sugerir</button>
 						<span id="thankyou" style="display: none;">Obrigado!</span>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 			</div>
-		</div>
-	</div>
-
-	<div class="row hidden-md hidden-lg">
-		<div class="col-xs-12" style="text-align: center">
-			<!-- GOOGLE - BEGIN -->
-			<!-- mobile -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:320px;height:100px"
-			     data-ad-client="ca-pub-6833277136146980"
-			     data-ad-slot="9057555357"></ins>
-			<!-- GOOGLE - END -->
 		</div>
 	</div>
 
@@ -232,10 +233,9 @@ window.fbAsyncInit = function () {
 		if (response.status === 'connected') {
 			console.log("<br>Connected to Facebook");
 			//SUCCESS
-			document.getElementById('fb-login-btn').style.display = 'none';
-			document.getElementById('sugestion-btn').style.display = 'inline-block';
-			document.getElementById('sugestion').style.display = 'block';
-			document.getElementById('thankyou').style.display = 'none';
+			$(".facebook-blocks").hide();
+			$(".sugestion-blocks").show();
+			$("#thankyou").hide();
 
 			console.log(response)
 			FB.api('/me', {
@@ -248,18 +248,18 @@ window.fbAsyncInit = function () {
 
 		}
 		else if (response.status === 'not_authorized') {
-			document.getElementById('fb-login-btn').style.display = 'inline-block';
-			document.getElementById('sugestion-btn').style.display = 'none';
-			document.getElementById('sugestion').style.display = 'none';
-			document.getElementById('thankyou').style.display = 'none';
-
+			$(".facebook-blocks").show();
+			$(".sugestion-blocks").hide();
+			$("#thankyou").hide();
 			console.log("Failed to Connect");
 
 			//FAILED
 		} else {
-			document.getElementById('fb-login-btn').style.display = 'inline-block';
-			document.getElementById('sugestion-btn').style.display = 'none';
-			document.getElementById('sugestion').style.display = 'none';
+			$(".facebook-blocks").show();
+			$(".sugestion-blocks").hide();
+			$("#thankyou").hide();
+			document.getElementsByClassName('facebook-blocks').style.display = 'inline-block';
+			document.getElementsByClassName('sugestion-blocks').style.display = 'none';
 			document.getElementById('thankyou').style.display = 'none';
 
 			console.log("Logged Out");
@@ -369,9 +369,9 @@ function fb_login() {
 			sugestion: sugestion
 		}));
 
-		document.getElementById('sugestion-btn').style.display = 'none';
-		document.getElementById('sugestion').style.display = 'none';
-		document.getElementById('thankyou').style.display = 'inline-block';
+
+		$(".sugestion-blocks").hide();
+		$("#thankyou").show();
 	}
 
 </script>
