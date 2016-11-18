@@ -105,7 +105,7 @@ app.get('/:friendly_url', function (req, res) {
         }else {
             var hits = req.cookies.hits;
             console.log("[COOKIES] hits", hits)
-            if(hits && hits % 3 === 0){
+            if(hits && hits % 4 === 0){
                 evilService.getAd(function (err, nextEvil) {
                     getData(err, evil, nextEvil);
                 });
