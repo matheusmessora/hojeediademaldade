@@ -74,12 +74,6 @@ module.exports = function EvilService(dependencies) {
         },
         {
             count: 0,
-            friendly_url: "pegar-homem-pegar-mulher",
-            title: "pegar homem, pegar mulher! BORAA",
-            img: "https://i.ytimg.com/vi/M81ke9svVXo/hqdefault.jpg",
-        },
-        {
-            count: 0,
             friendly_url: "pisar-na-grama",
             title: "pisar na grama",
             img: "http://redeemancipa.org.br/wp-content/uploads/2012/12/n%C3%A3o-pise.jpg",
@@ -237,6 +231,13 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "comprar-um-novo-smartphone",
             title: "comprar um novo smartphone",
             adpage: "magazine"
+        },
+
+        {
+            count: 0,
+            friendly_url: "otimizar-meu-site",
+            title: "otimizar meu site com um tema profissional de Wordpress",
+            adpage: "centive"
         },
 
         // {
