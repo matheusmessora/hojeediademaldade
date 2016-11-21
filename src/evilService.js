@@ -358,7 +358,7 @@ module.exports = function EvilService(dependencies) {
             if(evilCount){
                 evil.count = evilCount;
             }
-            console.log("[DEBUG] FOUND ", friendlyUrl, evil.count)
+            // console.log("[DEBUG] FOUND ", friendlyUrl, evil.count)
             callback(null, evil)
         })
 
