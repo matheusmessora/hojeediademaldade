@@ -49,17 +49,9 @@ var sugestionService = require('./src/sugestionService')({
 
 
 app.get('/', function (req, res) {
-    let totalEvil = evilService.totalEvils();
-
     evilService.newEvil(null, function(err, evil){
         evilService.newEvil(err, function(err, nextEvil){
-            res.render('index', {
-                data: evil,
-                online: 1,
-                newEvil: nextEvil,
-                totalEvil: totalEvil,
-                evilsDone: 0
-            });
+            getData(err, res, evil, nextEvil);
         })
     })
 });
@@ -134,34 +126,36 @@ app.get('/:friendly_url', function (req, res) {
         }else {
             var hits = req.cookies.hits;
             console.log("[COOKIES] hits", hits)
-            if(hits && hits % 4 === 0){
+            if(hits && hits % 5 === 0){
                 evilService.getAd(function (err, nextEvil) {
-                    getData(err, evil, nextEvil);
+                    getData(err, res, evil, nextEvil);
                 });
             }else {
                 evilService.newEvil(null, function(err, nextEvil){
-                    getData(err, evil, nextEvil);
+                    getData(err, res, evil, nextEvil);
                 })
             }
         }
     });
 
-    function getData(err, evil, nextEvil){
-        var page = 'index';
-
-        if(evil.adpage){
-            page = evil.adpage;
-        }
-
-        res.render(page, {
-            data: evil,
-            online: 1,
-            newEvil: nextEvil,
-            totalEvil: totalEvil,
-            evilsDone: 0
-        });
-    }
 });
+
+
+function getData(err, res, evil, nextEvil){
+    var page = 'index';
+
+    if(evil.adpage){
+        page = evil.adpage;
+    }
+
+    res.render(page, {
+        data: evil,
+        online: 1,
+        newEvil: nextEvil,
+        totalEvil: 0,
+        evilsDone: 0
+    });
+}
 
 app.listen(app.get('port'), function () {
     console.log('APP STARTED. NODE_ENV=' + process.env.NODE_ENV);
