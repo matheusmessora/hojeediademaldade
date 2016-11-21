@@ -287,7 +287,15 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "achar-dragonite-com-cp-baixo",
             title: "achar Dragonite com CP baixo",
             img: "https://scontent.frao1-1.fna.fbcdn.net/t31.0-8/15111129_1272821529426823_5759864245268673019_o.jpg",
+        },
+
+        {
+            count: 0,
+            friendly_url: "nao-seguir-a-dieta",
+            title: "não seguir a dieta",
+            img: "https://i.ytimg.com/vi/nb9GMm7QtlM/maxresdefault.jpg",
         }
+
 
 
         
