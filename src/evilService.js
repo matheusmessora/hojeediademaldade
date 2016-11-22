@@ -136,8 +136,8 @@ module.exports = function EvilService(dependencies) {
 
         {
             count: 0,
-            friendly_url: "dar-like-em-baranga-no-tinder",
-            title: "dar like em baranga no Tinter",
+            friendly_url: "dar-like-no-tinder",
+            title: "dar like no Tinter",
             img: "http://www.eonline.com/eol_images/Entire_Site/2014817/rs_560x415-140917143530-1024.Tinder-Logo.ms.091714_copy.jpg",
         },
 
