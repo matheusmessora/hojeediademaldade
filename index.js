@@ -47,10 +47,14 @@ var sugestionService = require('./src/sugestionService')({
     cache: memcached
 });
 
+var adService = require('./src/adService')({
+    random: random
+});
+
 
 app.get('/', function (req, res) {
-    evilService.newEvil(null, function(err, evil){
-        evilService.newEvil(err, function(err, nextEvil){
+    evilService.newEvil(null, true, function(err, evil){
+        evilService.newEvil(err, false, function(err, nextEvil){
             getData(err, res, evil, nextEvil);
         })
     })
@@ -117,24 +121,22 @@ app.get('/privacidade', function(req, res){
 
 
 app.get('/:friendly_url', function (req, res) {
-    let totalEvil = evilService.totalEvils();
-
-    evilService.findByFriendlyURL(req.params.friendly_url, function (err, evil) {
+    evilService.findByFriendlyURL(req.params.friendly_url, true, function (err, evil) {
         if(err){
             console.error("err", err);
             res.sendStatus(500);
         }else {
             var hits = req.cookies.hits;
             console.log("[COOKIES] hits", hits)
-            if(hits && hits % 5 === 0){
-                evilService.getAd(function (err, nextEvil) {
-                    getData(err, res, evil, nextEvil);
-                });
-            }else {
-                evilService.newEvil(null, function(err, nextEvil){
+            // if(hits && hits % 5 === 0){
+            //     evilService.getAd(function (err, nextEvil) {
+            //         getData(err, res, evil, nextEvil);
+            //     });
+            // }else {
+                evilService.newEvil(null, false, function(err, nextEvil){
                     getData(err, res, evil, nextEvil);
                 })
-            }
+            // }
         }
     });
 
@@ -142,19 +144,31 @@ app.get('/:friendly_url', function (req, res) {
 
 
 function getData(err, res, evil, nextEvil){
-    var page = 'index';
 
-    if(evil.adpage){
-        page = evil.adpage;
-    }
+    adService.getAd(function(middleAd){
+        adService.getAd(function(bannerAd){
+            var page = 'index';
 
-    res.render(page, {
-        data: evil,
-        online: 1,
-        newEvil: nextEvil,
-        totalEvil: 0,
-        evilsDone: 0
-    });
+            if(evil.adpage){
+                page = evil.adpage;
+            }
+
+            res.render(page, {
+                data: evil,
+                online: 1,
+                newEvil: nextEvil,
+                linkedEvil1: evil.linkedEvils[0],
+                linkedEvil2: evil.linkedEvils[1],
+                ads: {
+                    middle: middleAd.html.rectangle,
+                    banner: bannerAd.html.banner
+                },
+                totalEvil: 0,
+                evilsDone: 0
+            });
+        })
+    })
+
 }
 
 app.listen(app.get('port'), function () {

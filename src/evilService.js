@@ -11,6 +11,8 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "instalar-baidu",
             title: "instalar o BAIDU!",
             img: "http://antivirus.baidu.com/r/image/2014-08-25/22a52239c422616442d2c35540ff1361.jpg",
+            links: [3,9],
+            linkedEvils: []
         },
         {
             count: 87,
@@ -28,7 +30,9 @@ module.exports = function EvilService(dependencies) {
             count: 9,
             friendly_url: "abrir-o-ie",
             title: "abrir o IE",
-            img: "http://vignette3.wikia.nocookie.net/logopedia/images/d/d0/IE6.png/revision/latest?cb=20121221232621",
+            img: "https://davescomputertips.com/wp-content/uploads/2014/04/IE-logo.jpg",
+            links: [0,9],
+            linkedEvils: []
         },
         {
             count: 52,
@@ -65,6 +69,8 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "fazer-um-site-de-maldade",
             title: "fazer um site de maldade",
             img: "https://i.ytimg.com/vi/oR13iPNv9wI/hqdefault.jpg",
+            links: [0, 3],
+            linkedEvils: []
         },
         {
             count: 0,
@@ -230,7 +236,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "comprar-um-novo-smartphone",
             title: "comprar um novo smartphone",
-            adpage: "magazine"
+            // adpage: "magazine"
         },
 
         {
@@ -295,8 +301,7 @@ module.exports = function EvilService(dependencies) {
 
     var ads = [];
 
-
-    loadAds();
+    loadAds()
 
     function loadAds() {
         for (var i = 0; i < data.length; i++) {
@@ -308,25 +313,10 @@ module.exports = function EvilService(dependencies) {
 
 
     /** THIS NEED TO BE FIXED **/
-    function newEvil(err, callback) {
+    function newEvil(err, loadLinks, callback) {
         var randomInt = random.randomInt(0,data.length);
-        findByFriendlyURL(data[randomInt].friendly_url, callback)
+        findByFriendlyURL(data[randomInt].friendly_url, loadLinks, callback)
     }
-
-    var doEvil = function (friendlyUrl, callback) {
-
-        findByFriendlyURL(friendlyUrl, function(err, evil){
-            evil.count = evil.count + 1;
-            cacheEvil(err, evil, function(err, evil){
-
-                increaseEvilsDone(err, function(err){
-                    callback(err, evil)
-                })
-            });
-        });
-
-
-    };
 
     var totalEvils = function () {
         return data.length;
@@ -334,57 +324,72 @@ module.exports = function EvilService(dependencies) {
 
     var getAd = function(callback){
         var randomInt = random.randomInt(0,ads.length);
-        findByFriendlyURL(ads[randomInt].friendly_url, callback)
+        findByFriendlyURL(ads[randomInt].friendly_url, false, callback)
     }
 
-    var findByFriendlyURL = function(friendlyUrl, callback) {
+    var findByIndex = function(index){
+        return data[index];
+    }
+
+    var findByFriendlyURL = function(friendlyUrl, loadLinks, callback) {
         var evil
         var data = getData();
         for (var i = 0; i < data.length; i++) {
+            console.log(i, data[i].friendly_url);
             if(data[i].friendly_url === friendlyUrl){
                 evil = data[i];
             }
         }
         if(!evil){
             return callback({ error: 'Evil not found' }, {});
+        }else {
+            if(loadLinks){
+                if(evil.links){
+                    for (var i = 0; i < evil.links.length; i++) {
+
+                        console.log("evil: ",  evil);
+                        evil.linkedEvils.push(findByIndex(evil.links[i]))
+                    }
+                    callback(null, evil);
+                }else {
+                    evil.linkedEvils = [];
+                    newEvil(null, false, function(err, firstLinked){
+                        evil.linkedEvils.push(firstLinked);
+
+                        newEvil(err, false, function(err, secondLinked){
+                            evil.linkedEvils.push(secondLinked);
+                            callback(err, evil)
+                        });
+                    })
+                }
+
+            }else {
+                callback(null, evil);
+            }
         }
-
-        cache.get(evil.friendly_url, function(err, evilCount){
-            if (err) {
-                return callback(err, {});
-            }
-
-            evil.count = 0;
-            if(evilCount){
-                evil.count = evilCount;
-            }
-            // console.log("[DEBUG] FOUND ", friendlyUrl, evil.count)
-            callback(null, evil)
-        })
-
     };
 
     function getData(){
         return data;
     }
 
-    var cacheEvil = function(err, evil, callback){
-        console.log("[DEBUG] CACHING evil=" + evil.friendly_url);
-        if(err){
-            console.log("[ERROR] CACHING evil" + evil.friendly_url + ",err" + err);
-            return callback(err)
-        }
-
-        // CACHE EVIL
-        cache.set(evil.friendly_url, evil.count, 0, function(err){
-            if(err){
-                console.error("FAILED TO CACHE: " + evil.friendly_url + "=" + evil.count + ", err=" + err);
-            }else {
-                console.log("CACHE OK: " + evil.friendly_url + "=" + evil.count);
-            }
-            callback(err, evil)
-        });
-    };
+    // var cacheEvil = function(err, evil, callback){
+    //     console.log("[DEBUG] CACHING evil=" + evil.friendly_url);
+    //     if(err){
+    //         console.log("[ERROR] CACHING evil" + evil.friendly_url + ",err" + err);
+    //         return callback(err)
+    //     }
+    //
+    //     // CACHE EVIL
+    //     cache.set(evil.friendly_url, evil.count, 0, function(err){
+    //         if(err){
+    //             console.error("FAILED TO CACHE: " + evil.friendly_url + "=" + evil.count + ", err=" + err);
+    //         }else {
+    //             console.log("CACHE OK: " + evil.friendly_url + "=" + evil.count);
+    //         }
+    //         callback(err, evil)
+    //     });
+    // };
 
     return {
         getData: getData,

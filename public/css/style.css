@@ -35,6 +35,10 @@ h3 {
     display: inline;
     /*text-transform: uppercase;*/
 }
+h4 {
+    font-weight: 100;
+    font-size: 35px;
+}
 
 h5 {
     font-size: 18px;
@@ -194,6 +198,9 @@ a.evil {
 a.evil:hover {
     border: 1px solid #FFF;
 }
+a.linked-evil {
+    padding: 0;
+}
 
 /** EFFECTS **/
 .ease-in-out {
@@ -224,15 +231,34 @@ a.evil:hover {
 
 /** ---- SOCIAL ---- **/
 .btn-facebook {
-    background-color: #4080ff;
-    font-size: 18px;
-    color: #FFF;
-    text-transform: none;
+    position: relative;
+    padding: 6px 0 6px 44px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    background-color: #3b5998;
+    border-color: rgba(0,0,0,0.2);
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
 }
 .btn-facebook:hover,.btn-facebook:active, .btn-facebook:visited   {
-    background-color: #365899;
+    background-color: #2d4373;
     color: #FFF;
-
+}
+.btn-facebook>:first-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    line-height: 34px;
+    font-size: 1.6em;
+    text-align: center;
+    border-right: 1px solid rgba(0,0,0,0.2);
 }
 
 
@@ -244,7 +270,7 @@ a.evil:hover {
     background-color: #FFF; width:160px; height: 150px; margin:auto;
 }
 .magazine.medium-rectangle {
-    background-color: #FFF; width:300px; height: 250px;
+    background-color: #FFF; width:300px; height: 250px; margin:auto;
 }
 
 @media (max-width: 768px) {
