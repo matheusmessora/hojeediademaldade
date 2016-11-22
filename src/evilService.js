@@ -301,6 +301,14 @@ module.exports = function EvilService(dependencies) {
             title: "não seguir a dieta",
             img: "https://i.ytimg.com/vi/nb9GMm7QtlM/maxresdefault.jpg",
         }
+,
+
+        {
+            count: 0,
+            friendly_url: "blackfriday-no-shopping-trem",
+            title: "blackfriday no shopping trem",
+            img: "https://s3.amazonaws.com/doesuanota.com.br/img/shoppingtrem.jpeg",
+        }
 
 
 
