@@ -11,7 +11,7 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "instalar-baidu",
             title: "instalar o BAIDU!",
             img: "http://antivirus.baidu.com/r/image/2014-08-25/22a52239c422616442d2c35540ff1361.jpg",
-            links: [3,9],
+            // links: [3,9],
             linkedEvils: []
         },
         {
@@ -31,7 +31,7 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "abrir-o-ie",
             title: "abrir o IE",
             img: "https://davescomputertips.com/wp-content/uploads/2014/04/IE-logo.jpg",
-            links: [0,9],
+            // links: [0,9],
             linkedEvils: []
         },
         {
@@ -69,7 +69,7 @@ module.exports = function EvilService(dependencies) {
             friendly_url: "fazer-um-site-de-maldade",
             title: "fazer um site de maldade",
             img: "https://i.ytimg.com/vi/oR13iPNv9wI/hqdefault.jpg",
-            links: [0, 3],
+            // links: [0, 3],
             linkedEvils: []
         },
         {
@@ -194,7 +194,7 @@ module.exports = function EvilService(dependencies) {
             count: 4,
             friendly_url: "mandar-funcionario-embora",
             title: "mandar algum funcionário embora",
-            img: "http://bbb17.co/wp-content/uploads/2015/07/vota%C3%A7%C3%A3o-bbb-16.jpg",
+            img: "https://i.ytimg.com/vi/PDcpkaYzluM/maxresdefault.jpg",
         },
 
         {
@@ -222,7 +222,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "ganhar-desconto-na-netshoes",
             title: "ganhar desconto na NETSHOES",
-            img: "https://s3.amazonaws.com/doesuanota.com.br/img/desconto-ns.jpg",
+            img: "http://imgemail.netshoes.com.br/20161111/vespertino/img/destaque_vespertino.jpg",
         },
 
         {
@@ -264,7 +264,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "jogar-mu-com-os-amigos",
             title: "jogar MU com os amigos",
-            img: "http://www.unithost.com.br/img/servicos/62867473.png",
+            img: "http://uploadcdn.webzen.com/Files/Clara/portal-inquiry-notice/2012/03/21/20120321FONREJSSE6V202E4.jpg",
         },
 
         {
@@ -278,7 +278,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "esquecer-facebook-aberto",
             title: "esquecer o facebook aberto",
-            img: "https://s3.amazonaws.com/doesuanota.com.br/img/meme-garotinho-1.png",
+            img: "http://geradormemes.com/media/created/llmfyy.jpg",
         },
 
         {
@@ -307,7 +307,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "blackfriday-no-shopping-trem",
             title: "blackfriday no shopping trem",
-            img: "https://s3.amazonaws.com/doesuanota.com.br/img/shoppingtrem.jpeg",
+            img: "https://s3.amazonaws.com/static-hojediademaldade/shoppingtrem.jpg",
         }
 
 

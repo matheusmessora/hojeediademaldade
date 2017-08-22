@@ -3,7 +3,7 @@ module.exports = function(){
         case 'production':
             return {
                 memcached: {
-                    ip: 'web-cluster.acg4mh.0001.use1.cache.amazonaws.com:11211'
+                    ip: 'diademaldadecache.rfozey.cfg.use1.cache.amazonaws.com:11211'
                 }
             };
 
