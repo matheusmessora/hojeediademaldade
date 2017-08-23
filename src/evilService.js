@@ -351,7 +351,6 @@ module.exports = function EvilService(dependencies) {
         var evil
         var data = getData();
         for (var i = 0; i < data.length; i++) {
-            console.log(i, data[i].friendly_url);
             if(data[i].friendly_url === friendlyUrl){
                 evil = data[i];
             }
@@ -362,8 +361,6 @@ module.exports = function EvilService(dependencies) {
             if(loadLinks){
                 if(evil.links){
                     for (var i = 0; i < evil.links.length; i++) {
-
-                        console.log("evil: ",  evil);
                         evil.linkedEvils.push(findByIndex(evil.links[i]))
                     }
                     callback(null, evil);
