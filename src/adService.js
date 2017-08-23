@@ -17,14 +17,14 @@ module.exports = function ADService(dependencies) {
                 banner: '<script language="JavaScript1.1" type="text/javascript" src="http://www.afiliados.posthaus.com.br/get_banner.jsp?mkt=PH5838&bann=198"></script>'
             }
 
-        },
-        {
-            name: "magazine",
-            html: {
-                rectangle: '<div class="magazine medium-rectangle" data-mvc-banner="medium-rectangle"></div>',
-                banner: '<div class="magazine leaderboard" data-mvc-banner="leaderboard"></div>'
-            }
         }
+        // {
+        //     name: "magazine",
+        //     html: {
+        //         rectangle: '<div class="magazine medium-rectangle" data-mvc-banner="medium-rectangle"></div>',
+        //         banner: '<div class="magazine leaderboard" data-mvc-banner="leaderboard"></div>'
+        //     }
+        // }
     ];
 
     function getAd(callback) {

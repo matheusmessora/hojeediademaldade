@@ -225,12 +225,12 @@ module.exports = function EvilService(dependencies) {
             img: "http://imgemail.netshoes.com.br/20161111/vespertino/img/destaque_vespertino.jpg",
         },
 
-        {
-            count: 0,
-            friendly_url: "ganhar-desconto-na-magazine-luiza",
-            title: "ganhar desconto na Magazine Luiza",
-            adpage: "magazine"
-        },
+        // {
+        //     count: 0,
+        //     friendly_url: "ganhar-desconto-na-magazine-luiza",
+        //     title: "ganhar desconto na Magazine Luiza",
+        //     adpage: "magazine"
+        // },
 
         {
             count: 0,
