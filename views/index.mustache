@@ -104,12 +104,6 @@
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-xs-12 text-center">
-			{{{ads.banner}}}
-		</div>
-	</div>
-
 	<div class="row evil-holder card z-depth-2">
 		<div class="col-md-12">
 			<div class="card-content row">
@@ -189,15 +183,25 @@
 			</div>
 		</div>
 
-		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-			<div class="row card z-depth-2">
-				<div class="col-md-12">
-					<div class="card-content row text-center">
-						{{{ads.middle}}}
-					</div>
-				</div>
-			</div>
-		</div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" id="sugestion-holder" style="display: none;">
+            <div class="row card z-depth-2">
+                <div class="col-md-12">
+                    <div class="card-content row">
+                        <div class="col-md-12" style="height: 248px">
+                            <h5>Sugerir maldade</h5>
+                            <button id="fb-login-btn" onclick="fb_login();" type="button" class="btn btn-facebook facebook-blocks btn-block"><span class="fa fa-facebook"></span>Login com Facebook</button>
+                            <input type="text" class="form-control sugestion-blocks" id="sugestion" style="display: none"><br />
+                            <button onclick="saveSugestion();" type="button" class="btn btn-sm btn-primary sugestion-blocks" style="display: none">Sugerir</button>
+                            <span id="thankyou" style="display: none;">Obrigado!</span>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="card-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 			<div class="row card z-depth-2">
@@ -221,21 +225,8 @@
 	</div>
 
 	<div class="row">
-		<div id="sugestion-holder" class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="display: none;">
-			<div class="row card z-depth-2">
-				<div class="card-content">
-					<div class="col-md-12 text-center">
-						<h5>Sugerir maldade</h5>
-						<button id="fb-login-btn" onclick="fb_login();" type="button" class="btn btn-facebook facebook-blocks btn-block"><span class="fa fa-facebook"></span>Login com Facebook</button>
-						<input type="text" class="form-control sugestion-blocks" id="sugestion" style="display: none"><br />
-						<button onclick="saveSugestion();" type="button" class="btn btn-sm btn-primary sugestion-blocks" style="display: none">Sugerir</button>
-						<span id="thankyou" style="display: none;">Obrigado!</span>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" style="text-align: center">
+
+		<div class="col-xs-12" style="text-align: center">
 			<div class="row card z-depth-2">
 				<div class="white-bg">
 					<div class="fb-comments" data-width="100%"
@@ -424,9 +415,6 @@ function fb_login() {
 	}
 
 </script>
-
-<!-- MAGAZINE LUIZA -->
-<script type="text/javascript"> (function(storeName) { var b = document.createElement('script'); b.type = 'text/javascript'; b.async = true; b.src = 'https://www.magazinevoce.com.br/js/banner.js?store='+ storeName; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(b, s); })('descontosfeliz'); </script>
 
 
 </body>

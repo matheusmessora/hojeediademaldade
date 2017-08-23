@@ -128,15 +128,9 @@ app.get('/:friendly_url', function (req, res) {
         }else {
             var hits = req.cookies.hits;
             console.log("[COOKIES] hits", hits)
-            // if(hits && hits % 5 === 0){
-            //     evilService.getAd(function (err, nextEvil) {
-            //         getData(err, res, evil, nextEvil);
-            //     });
-            // }else {
                 evilService.newEvil(null, false, function(err, nextEvil){
                     getData(err, res, evil, nextEvil);
                 })
-            // }
         }
     });
 
@@ -145,29 +139,21 @@ app.get('/:friendly_url', function (req, res) {
 
 function getData(err, res, evil, nextEvil){
 
-    adService.getAd(function(middleAd){
-        adService.getAd(function(bannerAd){
-            var page = 'index';
+    var page = 'index';
 
-            if(evil.adpage){
-                page = evil.adpage;
-            }
+    if(evil.adpage){
+        page = evil.adpage;
+    }
 
-            res.render(page, {
-                data: evil,
-                online: 1,
-                newEvil: nextEvil,
-                linkedEvil1: evil.linkedEvils[0],
-                linkedEvil2: evil.linkedEvils[1],
-                ads: {
-                    middle: middleAd.html.rectangle,
-                    banner: bannerAd.html.banner
-                },
-                totalEvil: 0,
-                evilsDone: 0
-            });
-        })
-    })
+    res.render(page, {
+        data: evil,
+        online: 1,
+        newEvil: nextEvil,
+        linkedEvil1: evil.linkedEvils[0],
+        linkedEvil2: evil.linkedEvils[1],
+        totalEvil: 0,
+        evilsDone: 0
+    });
 
 }
 

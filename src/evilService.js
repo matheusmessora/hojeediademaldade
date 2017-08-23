@@ -137,8 +137,8 @@ module.exports = function EvilService(dependencies) {
         {
             count: 0,
             friendly_url: "dar-like-no-tinder",
-            title: "dar like no Tinter",
-            img: "http://www.eonline.com/eol_images/Entire_Site/2014817/rs_560x415-140917143530-1024.Tinder-Logo.ms.091714_copy.jpg",
+            title: "dar like no Tinder",
+            img: "http://data.pixiz.com/output/preview/400x400/0/5/1/3/3150_eeceb.jpg",
         },
 
         {
@@ -225,33 +225,12 @@ module.exports = function EvilService(dependencies) {
             img: "http://imgemail.netshoes.com.br/20161111/vespertino/img/destaque_vespertino.jpg",
         },
 
-        // {
-        //     count: 0,
-        //     friendly_url: "ganhar-desconto-na-magazine-luiza",
-        //     title: "ganhar desconto na Magazine Luiza",
-        //     adpage: "magazine"
-        // },
-
-        {
-            count: 0,
-            friendly_url: "comprar-um-novo-smartphone",
-            title: "comprar um novo smartphone",
-            // adpage: "magazine"
-        },
-
         {
             count: 0,
             friendly_url: "otimizar-meu-site",
             title: "otimizar meu site com um tema profissional de Wordpress",
             adpage: "centive"
         },
-
-        // {
-        //     count: 0,
-        //     friendly_url: "comprar-um-dominio-no-uolhost",
-        //     title: "ganhar desconto na Magazine Luiza",
-        //     adpage: "magazine"
-        // },
 
         {
             count: 0,
@@ -315,19 +294,6 @@ module.exports = function EvilService(dependencies) {
         
     ];
 
-    var ads = [];
-
-    loadAds()
-
-    function loadAds() {
-        for (var i = 0; i < data.length; i++) {
-            if(data[i].adpage){
-                ads.push(data[i]);
-            }
-        }
-    }
-
-
     /** THIS NEED TO BE FIXED **/
     function newEvil(err, loadLinks, callback) {
         var randomInt = random.randomInt(0,data.length);
@@ -338,17 +304,12 @@ module.exports = function EvilService(dependencies) {
         return data.length;
     };
 
-    var getAd = function(callback){
-        var randomInt = random.randomInt(0,ads.length);
-        findByFriendlyURL(ads[randomInt].friendly_url, false, callback)
-    }
-
     var findByIndex = function(index){
         return data[index];
-    }
+    };
 
     var findByFriendlyURL = function(friendlyUrl, loadLinks, callback) {
-        var evil
+        var evil;
         var data = getData();
         for (var i = 0; i < data.length; i++) {
             if(data[i].friendly_url === friendlyUrl){
@@ -386,29 +347,10 @@ module.exports = function EvilService(dependencies) {
         return data;
     }
 
-    // var cacheEvil = function(err, evil, callback){
-    //     console.log("[DEBUG] CACHING evil=" + evil.friendly_url);
-    //     if(err){
-    //         console.log("[ERROR] CACHING evil" + evil.friendly_url + ",err" + err);
-    //         return callback(err)
-    //     }
-    //
-    //     // CACHE EVIL
-    //     cache.set(evil.friendly_url, evil.count, 0, function(err){
-    //         if(err){
-    //             console.error("FAILED TO CACHE: " + evil.friendly_url + "=" + evil.count + ", err=" + err);
-    //         }else {
-    //             console.log("CACHE OK: " + evil.friendly_url + "=" + evil.count);
-    //         }
-    //         callback(err, evil)
-    //     });
-    // };
-
     return {
         getData: getData,
         totalEvils: totalEvils,
         newEvil: newEvil,
-        findByFriendlyURL: findByFriendlyURL,
-        getAd: getAd
+        findByFriendlyURL: findByFriendlyURL
     }
 };
