@@ -117,7 +117,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "nao-respoder-amem-no-grupo-da-familia",
             title: "não responder amém no grupo da famila",
-            img: "https://www.whatsapp.com/img/v2/logo-promo.jpg",
+            img: "https://s3.amazonaws.com/static-hojediademaldade/amem.jpg",
         },
 
         {
@@ -180,7 +180,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "fazer-style-inline",
             title: "fazer style inline",
-            img: "http://img.pandawhale.com/56193-Whenever-I-try-to-open-blinds-1kSs.gif",
+            img: "https://i.imgur.com/Q3cUg29.gif",
         },
 
         {
@@ -292,7 +292,7 @@ module.exports = function EvilService(dependencies) {
             count: 0,
             friendly_url: "achar-dragonite-com-cp-baixo",
             title: "achar Dragonite com CP baixo",
-            img: "https://scontent.frao1-1.fna.fbcdn.net/t31.0-8/15111129_1272821529426823_5759864245268673019_o.jpg",
+            img: "http://i.imgur.com/egqSR0J.png",
         },
 
         {
