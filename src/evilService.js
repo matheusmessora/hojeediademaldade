@@ -317,6 +317,7 @@ module.exports = function EvilService(dependencies) {
             }
         }
         if(!evil){
+            console.log("[EVIL] friendlyUrl not found", friendlyUrl)
             return callback({ error: 'Evil not found' }, {});
         }else {
             if(loadLinks){
